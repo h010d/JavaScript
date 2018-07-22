@@ -59,6 +59,7 @@ function Gallery(sSelector) {
         g.showImage(1);
 
     };
+
     g.galleryEvents = function() {
         console.info(event.which, event.altKey, event.ctrlKey, event.shiftKey);
         if (event.which == 27) {
