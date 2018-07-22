@@ -1,0 +1,17 @@
+var colors = ["red", "green", "blue"];
+console.log(colors);
+console.log("Длина массива: ",colors.unshift("yellow"));
+console.log(colors);
+console.log("Элемент который удалили: ", colors.shift());
+console.log(colors);
+console.log("Длина массива: ",colors.push("pink"));
+console.log(colors);
+console.log(colors.splice(2, 0, "black"));
+console.log(colors);
+console.log("Элемент который удалили: ", colors.splice(1, 1));
+console.log(colors);
+console.log("Элемент который удалили: ", colors.splice(3, 1, "violet"));
+console.log(colors);
+console.log("Элемент который удалили: ", colors.splice(2, 2, "fgfg", "zgzf", "rddth", "gdgdf", "fsdfsd"));
+console.log(colors);
+console.log( colors.join(" / "));

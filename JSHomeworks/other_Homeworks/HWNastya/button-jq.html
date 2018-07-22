@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Button</title>
+	<link href="scripts/button.css" rel="stylesheet">
+</head>
+<body>
+<form class="modal-window" action="modal-window.php" method="post" id="modal-window">
+      <span class="close" id="close"> </span>
+	 <!--   <span class="modal-close" id="modal_close">X</span> -->
+ 		<p>
+            <label for="name">Ваше имя:</label>
+            <input type="text"  name="name" placeholder="Иван Иванович" required />
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="email@email.com" required />
+        </p>
+        <p>
+            <label for="tel">Телефон:</label>
+            <input type="tel" name="tel" placeholder="+380(__)_______" required />
+        </p>
+        <p>
+            <label for="message">Текст сообщения:</label>
+           <br> <textarea name="message" cols="40" rows="6" required ></textarea>
+        </p>
+        <p>
+            <button class="submit" type="submit"> Отправить сообщение </button>
+        </p>
+</form>
+<input type="button" class="button" value="Обратная связь" id="button">
+    <script src="scripts/jquery-3.3.1.min copy.js"></script>
+	<script src="scripts/button-jq.js"></script>
+</body>
+</html>

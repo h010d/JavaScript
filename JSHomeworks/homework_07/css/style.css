@@ -1,0 +1,130 @@
+* {
+	box-sizing  : border-box;
+	font-family : sans-serif;
+}
+
+.wrapper {
+	position              : fixed;
+	padding               : 10px;
+	display               : inline-block;
+	background-color      : #2e2e2e;
+	border-radius         : 6px;
+	-webkit-border-radius : 6px;
+	-moz-border-radius    : 6px;
+	-ms-border-radius     : 6px;
+	-o-border-radius      : 6px;
+	min-width             : 280px;
+	left                  : auto;
+	right                 : 1em;
+	top                   : auto;
+	bottom                : 4em;
+}
+
+.hidden_calc {
+	visibility : hidden;
+}
+
+.save {
+	height      : 110px;
+	padding     : 35px 15px;
+	color       : #fff;
+	font-size   : 38px;
+	font-weight : 100;
+	text-align  : right;
+	max-width   : 231.359px;
+}
+
+.btn {
+	display               : inline-flex;
+	justify-content       : center;
+	height                : 50px;
+	width                 : 50px;
+	margin                : 6px;
+	background            : rgb(63, 63, 63);
+	border-radius         : 50%;
+	-webkit-border-radius : 50%;
+	-moz-border-radius    : 50%;
+	-ms-border-radius     : 50%;
+	-o-border-radius      : 50%;
+	color                 : #fff;
+	font-size             : 25px;
+	font-weight           : 200;
+	border                : none;
+}
+
+.btn:hover {
+	cursor : pointer;
+	border : 2px solid white;
+}
+
+.oper {
+	background            : #ff9501;
+	-webkit-border-radius : 50%;
+	-moz-border-radius    : 50%;
+	border-radius         : 50%;
+	/* -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	-moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 0px 0;
+	text-shadow: #ffffff 0 1px 0; */
+	color                 : #ffffff;
+	font-family           : helvetica, serif;
+	text-decoration       : none;
+	-ms-border-radius     : 50%;
+	-o-border-radius      : 50%;
+}
+
+.oper:hover {
+	background       : #dd8100;
+	background       : -webkit-gradient(linear, left top, left bottom, from(#f99113), to(#f99113));
+	background       : -webkit-linear-gradient(top, #f99113, #f99113);
+	background       : -moz-linear-gradient(top, #f99113, #f99113);
+	background       : -ms-linear-gradient(top, #f99113, #f99113);
+	background       : -o-linear-gradient(top, #f99113, #f99113);
+	background-image : -ms-linear-gradient(top, #f99113 0%, #f99113 100%);
+	color            : #ffffff;
+}
+
+/* .oper:active {
+    text-shadow: #ffffff 0 1px 0;
+    background: #ff9501;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff8400), to(#f99113));
+    background: -webkit-linear-gradient(top, #ff8400, #ff8400);
+    background: -moz-linear-gradient(top, #ff8400, #ff8400);
+    background: -ms-linear-gradient(top, #ff8400, #ff8400);
+    background: -o-linear-gradient(top, #ff8400, #ff8400);
+    background-image: -ms-linear-gradient(top, #ff8400 0%, #ff8400 100%);
+    color: #ffffff;
+} */
+
+.btn_nul {
+	width                 : 116px;
+	border-radius         : 30px;
+	-webkit-border-radius : 30px;
+	-moz-border-radius    : 30px;
+	-ms-border-radius     : 30px;
+	-o-border-radius      : 30px;
+}
+
+.light_oper {
+	background  : #a7a7a7;
+	color       : #000;
+	/* vertical-align: baseline; */
+	font-size   : 18px;
+	font-weight : 200;
+}
+
+.button_open {
+	width           : 30px;
+	height          : 30px;
+	position        : fixed;
+	left            : auto;
+	right           : 1em;
+	top             : auto;
+	bottom          : 1em;
+	background      : url('../img/icon_calculator_ios.png') 100% 100% no-repeat;
+	background-size : cover;
+}
+
+/* .row_one :last-child {
+    padding-top: -10px;
+} */

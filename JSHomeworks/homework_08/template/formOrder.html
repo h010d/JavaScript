@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/formOrder.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="form-container form__colors" id="formOrder">
+        <div class="wrapper">
+            <div class="form-title form__colors">
+                <h2 class="form__colors">Оформление заказа</h2>
+            </div>
+            <div class="form_name form__colors form__parent">
+                <div class="form-title form__colors child">Имя<span class="star_text form__colors">*</span></div>
+                <div class="child form__colors">
+                    <input class="form-field_name form__colors form-field" type="text" name="firstname" placeholder="Ваше имя" /><br />
+                </div>
+                <div class="child form__colors">
+                    <p class="form_name-text form__colors">Как вам было бы приятно, чтобы к вам обращались наши менеджеры?</p>
+                </div>
+            </div>
+            <!-- surname -->
+            <div class="form_surname form__colors form__parent">
+                <div class="form-title form__colors child">Фамилия</div>
+                <div class="child form__colors">
+                    <input class="form-field_surname form__colors form-field" type="text" name="surname" placeholder="Ваша фамилия" /><br />
+                </div>
+                <div class="child form__colors">
+                    <p class="form_name-text form__colors">Может пригодиться, чтобы найти заказ,<br> если вы потеряете или забудете его номер</p>
+                </div>
+            </div>
+            <!-- phone -->
+            <div class="form_phone form__colors form__parent">
+                <div class="form-title form__colors child">Контактный <br> телефон<span class="star_text form__colors">*</span></div>
+                <div class="child form__colors">
+                    <input class="form-field_phone form__colors form-field" type="text" name="phone" placeholder="Номер для связи " /><br />
+                </div>
+                <div class="child form__colors">
+                    <p class="form_name-text form__colors">По этому номеру с вами свяжется менеджер, чтобы уточнить детали заказа</p>
+                </div>
+            </div>
+            <!-- city -->
+            <div class="form_city form__colors form__parent">
+                <div class="form-title form__colors child">Город</div>
+                <div class="child form__colors">
+                    <input class="form-field_city form__colors form-field" type="text" name="city" placeholder="Город куда доставляется товар" /><br />
+                </div>
+                <div class="child form__colors">
+                    <p class="form_name-text form__colors">Город в который будет осуществляться доставка</p>
+                </div>
+            </div>
+            <!-- address -->
+            <div class="form_address form__colors form__parent">
+                <div class="form-title form__colors child">Адрес</div>
+                <div class="child form__colors">
+                    <input class="form-field_address form__colors form-field" type="text" name="address" placeholder="Адрес доставки" /><br />
+                </div>
+                <div class="child form__colors">
+                    <p class="form_name-text form__colors">Адрес доставки в свободной форме.<br> Например: б-р Т. Шевченко д 42 кв 16</p>
+                </div>
+            </div>
+            <!-- email -->
+            <div class="form_email form__colors form__parent">
+                <div class="form-title form__colors child">Email<span class="star_text form__colors">*</span></div>
+                <div class="child form__colors">
+                    <input class="form-field_email form__colors form-field" type="text" name="email" placeholder="Ваш email" /><br />
+                </div>
+                <div class="child form__colors">
+                    <p class="form_name-text form__colors">На данный email мы вышлем полную информацию о сделанном вами заказе</p>
+                </div>
+            </div>
+            <!-- text area -->
+            <div class="form-title form__colors child">Комментарии к заказу</div>
+            <p><textarea class="form-field comment_message form-field" name="text" id="comment" placeholder="Ваши комментарии к заказу"></textarea></p>
+            <!-- time delivery -->
+            <div class="time-delivery form__colors">
+                <div class="form-title form__colors child">Время доставки: </div>
+                <input type='radio' name='time-delivery' value='9-17' class='delivery' id='delivery_day' checked><label for='delivery_day' class='b-form__label_delivery_day delivery_form form__colors'>c 9:00 до 17:00 </label>
+                <input type='radio' name='time-delivery' value='15-20' class='delivery' id='delivery_day-evening'><label for='delivery_day-evening' class='b-form__label_fruit-banana delivery_form form__colors'>c 15:00 до 20:00 </label>
+                <input type='radio' name='time-delivery' value='20-24' class='delivery' id='delivery_evening'><label for='delivery_evening' class='b-form__label_delivery_evening delivery_form form__colors'>c 20:00 до 24:00 </label>
+                <input type='radio' name='time-delivery' value='individual' class='delivery' id='delivery_individual'><label for='delivery_individual' class='b-form__label_delivery_individual delivery_form form__colors'>Оговаривается индивидуально</label>
+            </div>
+            <!-- check -->
+            <div class="checkbox form__colors">
+                <br><input type='checkbox' name='subscribe' value='Присылать мне все новости сайта' class='form__subscribe' id='form__all_news'><label for='form__all_news' class='form__all_news form__colors form_check'>Присылать мне все новости сайта</label>
+                <br><input type='checkbox' name='subscribe' value='Я хочу получать новости только об акциях' class='form__subscribe' id='form__special_offer'><label for='form__special_offer' class='form__special_offer form__colors form_check'>Я хочу получать новости только об акциях</label>
+                <br><input type='checkbox' name='subscribe' value='Я хочу получать рассылку о новых поступлениях' class='form__subscribe' id='form__news_goods'><label for='form__news_goods' class='form__news_goods form__colors form_check'>Я хочу получать рассылку о новых поступлениях</label>
+                <br><input type='checkbox' name='subscribe' value='Присылать мне предложения сопутствующих товаров' class='form__subscribe' id='form__products_related'><label for='form__products_related' class='form__products_related form__colors form_check'>Присылать мне предложения сопутствующих товаров</label>
+            </div>
+            <div class="text_star form__colors">
+                <span class="star_text form__colors">*</span> - поля обязательные для заполнения
+            </div>
+            <!-- submit -->
+            <div class="submit-container form__colors">
+                <div class="submit-button"><a href="#" class="form__colors">Заказать</a></div>
+            </div>
+        </div>
+        <div class="displayInformer" title="Кликните чтобы закрыть сообщение">
+            <span class="close" title="закрыть сообщение">&times;</span>
+            <div class="displayInformer__inner_text">
+            </div>
+        </div>
+    </form>
+
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/component.js"></script>
+    <script src="../scripts/formOrder.js"></script>
+    <script>
+        var formOrder = new FormOrder("#formOrder");
+    </script>
+</body>
+
+</html>

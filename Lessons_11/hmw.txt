@@ -1,0 +1,6 @@
+добавить комбинации клавиш на начало и завершение слайдшоу
+
+<img>
+g.previewImage1.attr("src", bigImgSrc1);
+<img>
+g.previewImage2.attr("src", bigImgSrc2);

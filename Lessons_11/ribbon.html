@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style scope="paper-ripple">
+        paper-ripple {
+            display: block;
+            position: absolute;
+            border-radius: inherit;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        paper-ripple[animating] {
+            -webkit-transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        
+        paper-ripple[noink] {
+            pointer-events: none;
+        }
+        
+        #background.paper-ripple,
+        #waves.paper-ripple,
+        .wave-container.paper-ripple,
+        .wave.paper-ripple {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #background.paper-ripple,
+        .wave.paper-ripple {
+            opacity: 0;
+        }
+        
+        #waves.paper-ripple,
+        .wave.paper-ripple {
+            overflow: hidden;
+        }
+        
+        .wave-container.paper-ripple,
+        .wave.paper-ripple {
+            border-radius: 50%;
+        }
+        
+        paper-ripple.circle #background.paper-ripple,
+        paper-ripple.circle #waves.paper-ripple {
+            border-radius: 50%;
+        }
+        
+        paper-ripple.circle .wave-container.paper-ripple {
+            overflow: hidden;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Zeplin</title>
+
+    <!-- Components -->
+    <link rel="import" href="./components/paper-elements/paper-ripple/paper-ripple.html">
+
+    <link id="ppstyle" rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <script src="./js/lib.js"></script>
+    <script src="./js/panel.js" defer=""></script>
+</head>
+
+<body class="noArtboardSelected" data-bg="bg323232">
+    <main>
+        <div id="failureToConnectToPlugin">
+            <div id="failedToConnectToPluginHeader"><strong>Could not communicate with the plugin</strong></div>
+            <div id="failedToConnectToPluginExplanation">
+                <p>This panel communicates with a plugin to export the designs, but looks like itт•—s not properly installed automatically.</p>
+                <p>Please follow the guide <strong><a href="https://zeplin.io/support.html#photoshop-plugin">here</a></strong> to manually install it.</p>
+            </div>
+        </div>
+        <div id="selectArtboardsDiv">
+            <div id="selectArtboards"><strong>Select artboards to export to Zeplin</strong></div>
+            <div id="tip">
+                <p><strong>Tip</strong>:</p>
+                <p>You can also select layers to mark them as assets.</p>
+                <p><strong><a href="https://zpl.io/photoshop-assets">Read about</a></strong> how assets are setup in detail.</p>
+            </div>
+        </div>
+        <div id="noArtboardSelectedDisplay">
+            <p><strong>No artboard selected</strong></p>
+            <p>Looks like the <span>layer</span> you selected is not in an artboard. Click <strong><a href="https://helpx.adobe.com/photoshop/using/artboards.html">here</a></strong> to learn more about artboards.</p>
+        </div>
+        <div id="selectionsDiv">
+            <div class="informationLine" id="selectedArtboardInformation"><strong><span id="selectedArtboardCount"></span></strong></div>
+            <div class="informationLine" id="exportingInformation">
+                <div id="exportingOne"><strong>Exporting "<span></span>"...</strong></div>
+                <div id="exportingMany"><strong>Exporting <span></span> artboards</strong></div>
+            </div>
+            <button id="exportSelectedArtboards" class="light"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Export selected artboards</button>
+            <div id="progressDiv">
+                <img class="spinning" src="./img/icSpinnerLight.svg">
+                <div id="progress"></div>
+            </div>
+            <div id="layerAndLayerGroup">
+                <div id="selectedLayerInformation"><strong></strong></div>
+                <div id="selectedLayerGroupInformation"><strong></strong></div>
+                <div id="mark">
+                    <button class="markAsAssetToggle dark" id="markAsAsset"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Mark as asset</button>
+                    <div class="markAsAssetToggleInfo" id="markAsAssetInfo">This will add "-e-" in front of layer names. <strong><a href="https://zpl.io/photoshop-assets">Read moreт•І</a></strong></div>
+                </div>
+                <div id="unmark">
+                    <button class="markAsAssetToggle dark" id="unmarkAsAsset"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Remove asset setting</button>
+                    <div class="markAsAssetToggleInfo" id="markAsAssetInfo">This will remove the "-e-" in front of layer names. <strong><a href="https://zpl.io/photoshop-assets">Read moreт•І</a></strong></div>
+                </div>
+                <div id="ignoreSubLayersOfGroupDiv">
+                    <div id="radioSelectionLine">
+                        <label>
+                                  <input type="checkbox">
+                                  <div class="checkboxOuter">
+                                      <div class="checkboxInner"></div>
+                                  </div>
+                                  <div id="ignoreSubLayersOfGroupText"><strong>Ignore sublayers of group</strong></div>
+                              </label>
+                    </div>
+                    <div id="ignoreSubLayersInfo">Disables all layers inside this group in Zeplin.</div>
+                </div>
+            </div>
+        </div>
+        <div id="failure">
+            <div id="failedToExport"><strong>Failed to export artboard(s)</strong></div>
+            <div id="failureDetail">
+                <p>Parsing layer data failed. Looks like this is related to <span id="failedLayer"></span> <span id="failedArtboard"></span>.</p>
+
+                <p>Try adjusting some of its setting or let us know: support@zeplin.io</p>
+            </div>
+            <div id="commands">
+                <button id="gotIt" class="dark"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Got it</button>
+                <a href="" id="report" class="button light">
+                    <paper-ripple>
+                        <div id="background" class="style-scope paper-ripple"></div>
+                        <div id="waves" class="style-scope paper-ripple"></div>
+                    </paper-ripple>Report</a>
+            </div>
+        </div>
+        <div id="selectProject">
+            <template id="projectTemplate">
+                      <div class="project">
+                          <div class="projectIcon"></div>
+                          <div class="projectInfo">
+                              <div class="projectName"></div>
+                              <div class="projectType"></div>
+                          </div>
+                      </div>
+                  </template>
+            <template id="organizationTemplate">
+                      <div class="organization">
+                          <div class="organizationName"></div>
+                          <img src="./img/icTickSelected.svg">
+                      </div>
+                  </template>
+            <div id="selectProjectContent">
+                <h3 id="selectProjectHeader"><strong>Select a project:</strong></h3>
+                <div id="organizationDropdownContainer">
+                    <button id="organizationDropdown" class="dark">
+                              <div id="organizationDropdownInformation">
+                                  <div id="selectedOrganization"></div>
+                                  <img src="./img/icDropdown.svg">
+                              </div>
+                              <paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>
+                          </button>
+                    <div id="organizations" class="hidden"></div>
+                </div>
+                <div id="projects"></div>
+                <div id="projectsEmpty">
+                    <h1>No <span id="projectsSpan">projects</span> yet.</h1>
+                    <h3> one from the app!</h3>
+                </div>
+                <div id="userIsMember">
+                    <h2>Your organization role is Member, only Editors or higher can upload designs to organization projects.</h2>
+                    <h2><a href="https://zeplin.io/support.html#organization-roles">Learn more</a> about roles or contact organization Admins to update your role!</h2>
+                </div>
+                <div id="organizationProjectsLoading">
+                    <div><strong>Fetching Projects...</strong></div>
+                    <img class="spinning darkTheme" src="./img/icSpinnerLight.svg">
+                    <img class="spinning lightTheme" src="./img/icSpinnerDark.svg">
+                </div>
+                <div class="gettingProjectsFailedContent">
+                    <div class="gettingProjectsFailedTitle"><strong></strong></div>
+                    <div class="gettingProjectsFailedExplanation">
+                        <span class="serverErrorText">Server cannot be reached.</span>
+                        <span class="zeplinTokenErrorText">To upload designs, login first.</span>
+                        <span class="timeoutErrorText"> If necessary, update proxy settings from <strong><a href="https://zeplin.io/support.html#photoshop-proxy">here</a></strong>.</span>
+                        <span class="planErrorText"></span>
+                    </div>
+                    <button class="retry light"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>RETRY</button>
+                    <button class="zeplinTokenErrorRetry light"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Open Zeplin</button>
+                    <button class="gotItImPoor dark"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Got it</button>
+                </div>
+            </div>
+            <div id="selectProjectCommands" class="footerCommands">
+                <div>
+                    <label id="replaceArtboardsLine" class="footerCommandsHeaderLine">
+                              <input type="checkbox" id="updateScreens" checked="">
+                              <span class="checkbox"></span>
+                              <span>Replace screens with the same name</span>
+                          </label>
+                </div>
+                <div id="selectProjectButtons" class="footerCommandsButtons">
+                    <button id="cancelProjectSelection" class="dark"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Cancel</button>
+                    <button id="importToProject" class="light" disabled=""><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Import</button>
+                </div>
+            </div>
+        </div>
+        <div id="selectDensity">
+            <div>
+                <div id="selectDensityHeader">
+                    <div><strong>Choose your screensт•— densities</strong></div>
+                    <div id="info">This will help us generate the <strong>right assets and measurements.</strong></div>
+                </div>
+                <div id="web">
+                    <div class="density">
+                        <label>
+                                  <input type="radio" name="webDensity" value="1x" checked="">
+                                  <div class="radioOuter">
+                                      <div class="radioInner"></div>
+                                  </div>
+                                  <span>1x</span>
+                              </label>
+                    </div>
+                    <div class="density">
+                        <label>
+                                  <input type="radio" name="webDensity" value="2x">
+                                  <div class="radioOuter">
+                                      <div class="radioInner"></div>
+                                  </div>
+                                  <span>2x</span>
+                              </label>
+                    </div>
+                </div>
+                <div id="android">
+                    <div class="deviceType"><strong>Phone</strong></div>
+                    <div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="androidDensity" value="mdpi" checked="">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>mdpi</strong></span>
+                                      <span>(360x640px)</span>
+                                  </label>
+                        </div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="androidDensity" value="hdpi">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>hdpi</strong></span>
+                                      <span>(480x800px)</span>
+                                  </label>
+                        </div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="androidDensity" value="xhdpi">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>xhdpi</strong></span>
+                                      <span>(720x1280px)</span>
+                                  </label>
+                        </div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="androidDensity" value="xxhdpi">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>xxhdpi</strong></span>
+                                      <span>(1080x1920px)</span>
+                                  </label>
+                        </div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="androidDensity" value="xxxhdpi">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>xxxhdpi</strong></span>
+                                      <span>(1440x2560px)</span>
+                                  </label>
+                        </div>
+                    </div>
+                    <div class="deviceType"><strong>Tablet</strong></div>
+                    <div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="tabletDensity" value="mdpi" checked="">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>mdpi</strong></span>
+                                  </label>
+                        </div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="tabletDensity" value="hdpi">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>hdpi</strong></span>
+                                  </label>
+                        </div>
+                        <div class="density">
+                            <label>
+                                      <input type="radio" name="tabletDensity" value="xhdpi">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>xhdpi</strong></span>
+                                  </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="ios">
+                    <div class="density">
+                        <label>
+                                  <div>
+                                      <input type="radio" name="iosDensity" value="1x" checked="">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>1x</strong></span>
+                                  </div>
+                                  <div>320x480, 320x568, 375x667, 414x736</div>
+                              </label>
+                    </div>
+                    <div class="density">
+                        <label>
+                                  <div>
+                                      <input type="radio" name="iosDensity" value="2x">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>2x</strong></span>
+                                  </div>
+                                  <div>640x960, 640x1136, 750x1334</div>
+                              </label>
+                    </div>
+                    <div class="density">
+                        <label>
+                                  <div>
+                                      <input type="radio" name="iosDensity" value="3x">
+                                      <div class="radioOuter">
+                                          <div class="radioInner"></div>
+                                      </div>
+                                      <span><strong>3x</strong></span>
+                                  </div>
+                                  <div>1242x2208</div>
+                              </label>
+                    </div>
+                </div>
+            </div>
+            <div id="selectDensityCommands" class="footerCommands">
+                <div class="footerCommandsHeaderLine">
+                    <img src="./img/icOvalI.svg">
+                    <span>What I need to choose?</span>
+                </div>
+                <div class="footerCommandsButtons">
+                    <button id="cancelDensitySelection" class="dark"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Cancel</button>
+                    <button id="chooseDensity" class="light"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Choose</button>
+                </div>
+            </div>
+        </div>
+        <div id="pluginUpdated"><strong>Plugin is updated, restart Photoshop to get it.</strong><img src="./img/icClosePanel.svg"></div>
+    </main>
+    <footer>
+        <img id="zeplin" src="img/logoZeplinPanelBottom.svg">
+    </footer>
+    <div id="loading">
+        <div><strong></strong></div>
+        <img class="spinning darkTheme" src="./img/icSpinnerLight.svg">
+        <img class="spinning lightTheme" src="./img/icSpinnerDark.svg">
+    </div>
+    <div class="gettingProjectsFailedContent">
+        <div class="gettingProjectsFailedTitle"><strong></strong></div>
+        <div class="gettingProjectsFailedExplanation">
+            <span class="serverErrorText">Server cannot be reached.</span>
+            <span class="zeplinTokenErrorText">To upload designs, login first.</span>
+            <span class="timeoutErrorText"> If necessary, update proxy settings from <strong><a href="https://zeplin.io/support.html#photoshop-proxy">here</a></strong>.</span>
+            <span class="planErrorText"></span>
+        </div>
+        <button class="retry light"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>RETRY</button>
+        <button class="zeplinTokenErrorRetry light"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Open Zeplin</button>
+        <button class="gotItImPoor dark"><paper-ripple>
+      <div id="background" class="style-scope paper-ripple"></div>
+      <div id="waves" class="style-scope paper-ripple"></div>
+    </paper-ripple>Got it</button>
+    </div>
+
+
+</body>
+
+</html>

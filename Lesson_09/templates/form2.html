@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+    <link rel='stylesheet' href='../css/form2.css'>
+</head>
+
+<body>
+    <form action='?' method='GET' id='form2'>
+        <div class='b-form__message b-form__message_error'>
+            Форма заполнена неверно!
+        </div>
+
+        <table border='1'>
+            <tr>
+                <td><label class='b-form__label_name'>Название товара</label></td>
+                <td><input type='text' name='name' class='b-form__name b-textfield'></td>
+            </tr>
+            <tr>
+                <td><label class='b-form__label_brand'>Марка</label></td>
+                <td><input type='text' name='brand' class='b-form__brand b-textfield'></td>
+            </tr>
+            <tr>
+                <td><label class='b-form__label_price'>Цена</label></td>
+                <td><input type='text' name='price' class='b-form__price b-textfield'></td>
+            </tr>
+
+            <tr>
+                <td><label class='b-form__label_description'>Описание</label></td>
+                <td>
+                    <textarea name='description' class='b-form__description b-textfield'></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type='submit' value='OK' class='b-form__ok-button'>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script src='../scripts/jquery-3.3.1.min.js'></script>
+
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/component.js"></script>
+    <script src='../scripts/form-checker.js'></script>
+    <script>
+        var f = new FormChecker("#form2");
+    </script>
+</body>
+
+</html>

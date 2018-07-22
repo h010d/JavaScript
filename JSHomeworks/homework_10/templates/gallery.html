@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>gallery home
+    </title>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' href='../css/gallery.css'>
+</head>
+
+<body>
+    <div class='gallery' id='gallery1'>
+        <button class='preview__arrow preview__arrow_prev'>&lt;</button>
+        <div class='picture'><img src='../images/gallery/0.PNG' class='picture__image' alt='Image 0'></div>
+        <div class='picture'><img src='../images/gallery/1.PNG' class='picture__image' alt='Image 1'></div>
+        <div class='picture'><img src='../images/gallery/2.PNG' class='picture__image' alt='Image 2'></div>
+        <div class='picture'><img src='../images/gallery/3.PNG' class='picture__image' alt='Image 3'></div>
+        <div class='picture'><img src='../images/gallery/4.PNG' class='picture__image' alt='Image 4'></div>
+        <div class='picture'><img src='../images/gallery/5.PNG' class='picture__image' alt='Image 5'></div>
+        <button class='preview__arrow preview__arrow_next'>&gt;</button>
+        <div class="buttons_group">
+            <ul>
+                <li><button class="circles"></button></li>
+                <li><button class="circles"></button></li>
+                <li><button class="circles"></button></li>
+                <li><button class="circles"></button></li>
+                <li><button class="circles"></button></li>
+                <li><button class="circles"></button></li>
+            </ul>
+
+        </div>
+
+
+
+        <!-- <div class='b-preview__text'></div>
+        <div class="b-preview__info">
+            <span class="b-preview__currentPlace"></span> /
+            <span class="b-preview__maxPlace"></span>
+        </div> -->
+
+        <!-- <button class="b-preview__slideshowBtn">start</button> -->
+    </div>
+
+
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/component.js"></script>
+    <script src="../scripts/gallery_css.js"></script>
+    <script>
+        var gl = new Gallery("#gallery1");
+    </script>
+</body>
+
+</html>

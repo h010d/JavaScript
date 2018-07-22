@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>gallery home JS</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/gallery_js.css">
+</head>
+
+<body>
+<div class="sectionGallery" id="sectionGallery">
+    <div class="gallery">
+        <div class="picture"><img src="../images/gallery/10.PNG" class="picture__image" alt="Image 10" title="10 слайд">
+        </div>
+        <div class="buttons_group">
+            <ul>
+                <li>
+                    <button class="circles class__hover" title="к 1 слайду"></button>
+                </li>
+                <li>
+                    <button class="circles class__hover" title="к 2 слайду"></button>
+                </li>
+                <li>
+                    <button class="circles class__hover" title="к 3 слайду"></button>
+                </li>
+                <li>
+                    <button class="circles class__hover" title="к 4 слайду"></button>
+                </li>
+                <li>
+                    <button class="circles class__hover" title="к 5 слайду"></button>
+                </li>
+                <li>
+                    <button class="circles class__hover" title="к 6 слайду"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button class="preview__arrow  buttons class__hover preview__arrow_prev" title="к предыдущему слайду">&lt;</button>
+    <button class="buttons class__hover random" title="показать случайный слайд">show random</button>
+    <button class="preview__arrow  buttons class__hover preview__arrow_next" title="к следующему слайду">&gt;</button>
+</div>
+<script src="../scripts/jquery-3.3.1.min.js"></script>
+<script src="../scripts/component.js"></script>
+<script src="../scripts/gallery_js.js"></script>
+<script>
+	var gl = new Gallery('#sectionGallery');
+</script>
+</body>
+
+</html>

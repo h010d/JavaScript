@@ -1,0 +1,17 @@
+<div id="">
+ <div><img src="images/1.jpg"></div>
+ <button>arrow</button>
+ <button></button>
+
+ <button>circles</button>
+ <button></button>
+ <button></button>
+ <button></button>
+ <button></button>
+</div>
+
+images/
+ 1.jpg 2.jpg ... 5.jpg
+
+path = "images/" + g.imageNum + ".jpg";
+

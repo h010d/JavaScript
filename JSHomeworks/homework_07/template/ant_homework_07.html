@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+<div class="wrapper hidden_calc">
+	<div class="button" id="calculator">
+		<div class="save"></div>
+		<div class="row_one">
+			<button class="btn light_oper" value="C">AC</button>
+			<button class="btn light_oper" value="del">&larr;</button>
+			<button class="btn light_oper" value="%">%</button>
+			<button class="btn oper" value="/">&divide;</button>
+		</div>
+		<div class="row_two">
+			<button class="btn" value="7">7</button>
+			<button class="btn" value="8">8</button>
+			<button class="btn" value="9">9</button>
+			<button class="btn oper" value="*">x</button>
+		</div>
+		<div class="row_three">
+			<button class="btn" value="4">4</button>
+			<button class="btn" value="5">5</button>
+			<button class="btn" value="6">6</button>
+			<button class="btn oper" value="-">-</button>
+		</div>
+		<div class="row_four">
+			<button class="btn" value="1">1</button>
+			<button class="btn" value="2">2</button>
+			<button class="btn" value="3">3</button>
+			<button class="btn oper" value="+">+</button>
+		</div>
+		<div class="row_five">
+			<button class="btn btn_nul" value="0">0</button>
+			<button class="btn" value=".">,</button>
+			<button class="btn oper" value="=">=</button>
+		</div>
+	</div>
+</div>
+<a href='#' class="button_open" id="miniBtn" title='Скрыть/Показать_калькулятор'></a>
+                                                                                <!-- style="background-image: url('../img/icon_calculator_ios.png')" -->
+                                                                                <!-- <textarea name="txtArea" id="txtArea" placeholder="answer"></textarea> -->
+<script src="../scripts/jquery-3.3.1.min.js"></script>
+<script src="../scripts/script.js"></script>
+<script>
+	// Объект
+	var btn     = new Calculate('#calculator');
+	var miniBtn = new ShowCalc('#miniBtn');
+	// console.log("объект:", miniBtn);
+</script>
+
+</body>
+
+</html>

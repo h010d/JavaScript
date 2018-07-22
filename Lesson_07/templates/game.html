@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>занятие JS</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="game1">
+        <select id="userAnswer">
+			<option value="rock">камень</option>
+			<option value="scissors">ножницы</option>
+			<option value="paper">бумага</option>
+		</select>
+        <div id="result" style="display: none;">
+            <img src="" id="userAnswerImg" width="150">
+            <img src="" id="computerAnswerImg" width="150">
+            <div id="message"></div>
+        </div>
+    </div>
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/game.js"></script>
+    <script>
+        // Объект
+        var game = new Game("#game1");
+        // console.log("объект:", game);
+    </script>
+</body>
+
+</html>
