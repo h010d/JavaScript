@@ -4,4 +4,3 @@
 g.previewImage1.attr("src", bigImgSrc1);
 <img>
 g.previewImage2.attr("src", bigImgSrc2);
-g.previewImage2.attr("src", bImgSrc2);
