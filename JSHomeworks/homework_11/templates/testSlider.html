@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>testSlider_11</title>
+    <meta charset='UTF-8'>
+
+    <script src="https://use.fontawesome.com/49f9fcf70c.js"></script>
+    <link rel='stylesheet' href='../css/testSlider.css'>
+</head>
+
+<body>
+    <div class='gallery' id='gallery1'>
+        <div class="display display_size" id="display">
+
+
+        </div>
+        <div class="button_wrap">
+            <button class="button_prev button" title="предыдущее изображение">prev</button>
+            <button class="button_start button" title="запустить слайдшоу">start</button>
+            <button class="button_next button" title="следующее изображение">next</button>
+        </div>
+        <div class="display_info">
+            Hi :)
+        </div>
+        <div class="text_info ">
+            <div class="info_top text__info_item">
+                <p> Начать/Остановить слайдшоу нажмите CTRL + ПРОБЕЛ </p><br>
+            </div>
+            <div class="info_centre text__info_item">
+                <p> Предыдущее изображение <span class="arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </span></p>
+            </div>
+
+            <div class="info_footer text__info_item">
+                <p> Следующее изображение <span class="arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                </span></p>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/component.js"></script>
+    <script src="../scripts/testSlider.js"></script>
+    <script>
+        var gl = new Gallery('#gallery1');
+    </script>
+</body>
+
+</html>
