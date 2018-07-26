@@ -4,7 +4,6 @@ function Gallery(sSelector) {
     g.init(sSelector);
     g.pictures = g.findObj('.picture');
     g.displayCurrent = g.findObj('.display');
-    // g.displayNext = g.findObj('.display2');
     g.buttonMain = g.findObj('.button_start');
     g.buttonNext = g.findObj('.button_next');
     g.buttonPrev = g.findObj('.button_prev');
@@ -12,8 +11,6 @@ function Gallery(sSelector) {
     g.displayInfo = g.findObj('.display_info');
     g.firstObj = g.createObjDiv('firstObj');
     g.secondObj = g.createObjDiv('secondObj');
-    // console.log('g.firstObj :', g.firstObj);
-    // console.log('g.secondObj :', g.secondObj);
     g.prevObject = '';
     g.startPosition = 0;
     g.imageMaxPosition = 5;
@@ -40,14 +37,6 @@ function Gallery(sSelector) {
         g.addObjToPage();
         g.currentImage = 'url(\'../images/gallery/0.JPG\')';
         g.setNumberQueue();
-        // g.firstObj.css({
-        //     "background": g.currentImage,
-        //     'background-size': g.backgroundSize,
-        //     'opacity': 1.0,
-        //     "height": g.height,
-        //     "width": g.width,
-        //     'position': 'relative'
-        // });
         g.initObj();
         g.setDisplayInfoText();
     };
@@ -88,7 +77,6 @@ function Gallery(sSelector) {
             'background-image': g.currentImage,
             'background-size': g.backgroundSize,
             'opacity': 1.0
-                // 'z-index': -1
         });
         return oObject;
     };
@@ -174,9 +162,6 @@ function Gallery(sSelector) {
         g.currentNext = g.currentPrev = g.returnCurrentNumber(g.currentImage);
         g.nextImage = "url(\'../images/gallery/" + g.checkEndLength(++g.currentNext) + ".JPG\')";
         g.prevImage = "url(\'../images/gallery/" + g.checkEndLength(--g.currentPrev) + ".JPG\')";
-        // console.log('g.currentImage :', g.currentImage);
-        // console.log('g.nextImage :', g.nextImage);
-        // console.log('g.prevImage :', g.prevImage);
     };
     g.dropOpacityPrev = function() {
         g.prevObject = g.firstObj;
@@ -188,7 +173,6 @@ function Gallery(sSelector) {
         });
     };
     g.galleryEvents = function() {
-        // console.info(event.which, event.altKey, event.ctrlKey, event.shiftKey);
         if ((
                 event.which == 32
             ) && (
@@ -214,14 +198,6 @@ function Gallery(sSelector) {
         oButton.css({
             'color': 'rgb(0, 196, 0)'
         });
-    };
-    g.wait = function(ms) {
-        let d = new Date();
-        let d2 = null;
-        do {
-            d2 = new Date();
-        }
-        while (d2 - d < ms);
     };
     g.startInit();
     // ******************* события ******************* //
