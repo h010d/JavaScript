@@ -1,5 +1,6 @@
 .display {
-    height: 100px;
-    width: 100px;
-    opacity: 0.5;
+    height: 250px;
+    width: 200px;
+    opacity: 1;
+    /* position: relative; */
 }
