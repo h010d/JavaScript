@@ -60,7 +60,7 @@ function Gallery(sSelector) {
 
     };
     g.galleryEvents = function() {
-        console.info(event.which, event.altKey, event.ctrlKey, event.shiftKey);
+        // console.info(event.which, event.altKey, event.ctrlKey, event.shiftKey);
         if (event.which == 27) {
             g.closePreview();
         }
