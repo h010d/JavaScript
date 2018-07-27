@@ -19,7 +19,14 @@ function Gallery(sSelector) {
     g.prevImage = '';
     g.currentNext = 0;
     g.currentPrev = 0;
-    //Признак того что работает setInterval()
+    // ? Признак того что работает setInterval()
+    // ! Признак того что работает setInterval()
+    // TODO: Признак того что работает setInterval()
+    // * Признак того что работает setInterval()
+    /**
+     *  @param Признак того что работает setInterval()
+     */
+
     g.slideshowIntervalStart = null;
     // признак запуска слайдшоу
     g.slideshowStart = false;
