@@ -26,15 +26,16 @@ function Gallery(sSelector) {
 	/**
 	 * @param g.slideshowStart признак запуска слайдшоу*/
 	g.slideshowStart = false;
-	let music = new Audio();
-	music.src = '../audio/Alize_Mon_maquis.mp3';
+	let music    = new Audio();
+	music.src    = '../audio/Alize_Mon_maquis.mp3';
+	music.volume = 0.75;
 	// ******************* настройки ******************* //
 	// * С какой картинки стартует показ */
-	g.currentImage       = 'url(\'../images/gallery/10.JPG\')';
+	g.currentImage       = 'url(\'../images/gallery/9.JPG\')';
 	g.timeAnim           = 3 * 1000;
 	g.backgroundSize     = '100% 100%';
-	g.height             = '500px';
-	g.width              = '500px';
+	g.height             = '550px';
+	g.width              = '600px';
 	// ******************* методы ******************* //
 	g.startInit          = function () {
 		g.addObjToPage();
@@ -92,7 +93,6 @@ function Gallery(sSelector) {
 	
 	g.show                 = function () {
 		if (g.slideshowStart){
-			g.startStopMusic(); //? *************************************
 			g.stopSlideshow();
 			g.addBtmMusicBacklight();
 		}
@@ -100,15 +100,16 @@ function Gallery(sSelector) {
 			g.setSlideshowData('stop', true);
 			g.setDisplayInfoText('Слайдшоу запущено');
 			g.addButtonBacklight(g.buttonMain);
-			g.startStopMusic(); //? *************************************
 			g.rotation();
 			g.slideshowIntervalStart = setInterval(g.rotation, g.timeAnim * 2);
 		}
+		g.startStopMusic(); //? *************************************
 	};
 	g.stopSlideshow        = function () {
 		g.setSlideshowData('start', false);
 		clearInterval(g.slideshowIntervalStart);
 		g.setDisplayInfoText('Слайдшоу остановлено');
+		g.startStopMusic(); //? *************************************
 	};
 	g.setSlideshowData     = function (btnText, slideshowStart) {
 		g.buttonMain.text(btnText);
