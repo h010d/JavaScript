@@ -3,8 +3,8 @@ function Component() {
     this.init = function(sSelector) {
         this.elem = $(sSelector);
     };
-    this.createObjDiv = function(sClassName) {
-        return this.elem = $("<div class='" + sClassName + "'></div>");
+    this.createObjDiv = function() {
+        return this.elem = $("<div></div>");
     };
     this.findObj = function(sSelector) {
         /*  f.name = f.form.find('.b-form__name'); */

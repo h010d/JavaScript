@@ -9,8 +9,8 @@ function Gallery(sSelector) {
     g.buttonMusic = g.findObj('.button_music');
     g.buttonS = g.findObj('.button');
     g.displayInfo = g.findObj('.display_info');
-    g.firstObj = g.createObjDiv('firstObj');
-    g.secondObj = g.createObjDiv('secondObj');
+    g.firstObj = g.createObjDiv();
+    g.secondObj = g.createObjDiv();
     g.prevObject = '';
     g.startPosition = 0;
     g.imageMaxPosition = 21;
@@ -29,6 +29,8 @@ function Gallery(sSelector) {
     let music = new Audio();
     music.src = '../audio/Alize_Mon_maquis.mp3';
     // ******************* настройки ******************* //
+    // * С какой картинки стартует показ */
+    g.currentImage = 'url(\'../images/gallery/10.JPG\')';
     g.timeAnim = 3 * 1000;
     g.backgroundSize = '100% 100%';
     g.height = '500px';
@@ -36,7 +38,7 @@ function Gallery(sSelector) {
     // ******************* методы ******************* //
     g.startInit = function() {
         g.addObjToPage();
-        g.currentImage = 'url(\'../images/gallery/0.JPG\')';
+
         g.setNumberQueue();
         g.initObj();
         g.setDisplayInfoText();
@@ -62,7 +64,6 @@ function Gallery(sSelector) {
             'position': 'absolute',
             'top': 0
         });
-
     };
     g.rotation = function() {
         g.checkEndLength(g.returnCurrentNumber(g.currentImage));
@@ -72,7 +73,6 @@ function Gallery(sSelector) {
         g.setNumberQueue();
         g.setDisplayInfoText();
     };
-
     g.changeImageCurrent = function(oObject) {
         oObject.css({
             'background-image': g.currentImage,
@@ -92,14 +92,14 @@ function Gallery(sSelector) {
 
     g.show = function() {
         if (g.slideshowStart) {
-            music.pause(); //? *************************************
+            g.startStopMusic(); //? *************************************
             g.stopSlideshow();
             g.addBtmMusicBacklight();
         } else {
             g.setSlideshowData('stop', true);
             g.setDisplayInfoText('Слайдшоу запущено');
             g.addButtonBacklight(g.buttonMain);
-            music.play(); //? *************************************
+            g.startStopMusic(); //? *************************************
             g.rotation();
             g.slideshowIntervalStart = setInterval(g.rotation, g.timeAnim * 2);
         }
@@ -177,6 +177,7 @@ function Gallery(sSelector) {
         });
     };
     g.galleryEvents = function() {
+        console.info(event.which, event.altKey, event.ctrlKey, event.shiftKey);
         if ((
                 event.ctrlKey
             ) && (
@@ -184,14 +185,12 @@ function Gallery(sSelector) {
             )) {
             if (!g.slideshowStart) {
                 g.show();
-                music.play(); //? *************************************
             } else if ((
                     event.ctrlKey
                 ) && (
                     event.which === 32
                 )) {
                 g.stopSlideshow();
-                music.pause(); //? *************************************
             }
         }
         if (event.which === 37) {
@@ -200,7 +199,7 @@ function Gallery(sSelector) {
         if (event.which === 39) {
             g.showNextImage();
         }
-        if (event.which === 32) {
+        if (event.which === 77) {
             g.startStopMusic();
         }
     };
@@ -225,6 +224,7 @@ function Gallery(sSelector) {
         }
     };
     g.startStopMusic = function() {
+
         if (music.paused) {
             music.play();
             g.buttonMusic.css({
@@ -238,7 +238,6 @@ function Gallery(sSelector) {
         }
     };
     g.startInit();
-    //music.pause();
     // ******************* события ******************* //
     g.buttonMain.click(g.show);
     g.buttonPrev.click(g.showPreviousImage);
