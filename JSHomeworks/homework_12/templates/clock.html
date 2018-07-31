@@ -8,22 +8,50 @@
 </head>
 
 <body>
-    <div class="container">
-        <ul class="clock" id="clock1">
-            <li class="days"></li>
-            <li class="point">:</li>
-            <li class="hours"></li>
-            <li class="point">:</li>
-            <li class="min"></li>
-            <li class="point">:</li>
-            <li class="sec"></li>
-        </ul>
+    <div class="wrapper">
+        <div class="poster background-color__desc shadowtext">
+            <p>Осталось</p>
+        </div>
+        <div class="container">
+            <ul class="clock" id="clock1">
+                <li class="days"></li>
+                <li class="point">:</li>
+                <li class="hours"></li>
+                <li class="point">:</li>
+                <li class="min"></li>
+                <li class="point">:</li>
+                <li class="sec"></li>
+            </ul>
+            <div class="description background-color__desc">
+                <ul class="desc-bottom">
+                    <li class="description-inner">дней</li>
+                    <li class="description-inner"></li>
+                    <li class="description-inner">часов</li>
+                    <li class="description-inner"></li>
+                    <li class="description-inner">минут</li>
+                    <li class="description-inner"></li>
+                    <li class="description-inner">секунд</li>
+                </ul>
+            </div>
+
+            <div class="wrapper__check">
+                <button class="button__check">проверить</button>
+            </div>
+            <!-- <button id="myBtn">Open Modal</button> -->
+            <div id="myModal" class="modal background-color__desc">
+                <!-- Modal content -->
+                <div class="modal-content background-color__desc">
+                    <span class="close" title="close">&times;</span>
+                    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/nRTJd91G04Q?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="../scripts/jquery-3.3.1.min.js"></script>
     <script src="../scripts/component.js"></script>
     <script src="../scripts/clock.js"></script>
     <script>
-        var cl = new Clock("#clock1");
+        var cl = new Clock(".container");
     </script>
 </body>
 

@@ -2,83 +2,112 @@
  * long description for the file
  *
  * @summary short description for the file
- * @author {Anatolii Kravchenko}
+ * @author Anatolii Kravchenko
  *
  * Created at     : 2018-07-30 21:00:47 
- * Last modified  : 2018-07-30 22:43:48
+ * Last modified  : 2018-07-31 03:23:13
+ */
+/**
+ * @param {oObject} sSelector from html
  */
 function Clock(sSelector) {
     var c = this;
     c.init(sSelector);
     //* ********************  properties ******************** *//
-
-
-
-    // console.log('c.mainDate :', c.mainDate);
+    c.mainDate = new Date(2018, 7, 11, 14, 30, 0);
+    c.buttonCheck = c.findObj('.button__check');
+    c.container = c.findObj('.container');
+    c.afterPoster = c.findObj('.after__poster');
+    c.today = 0;
+    c.startCount;
+    /**
+     * * modal window 
+     */
+    c.myModal = c.findObj('#myModal');
+    c.modal = c.findObj('.modal');
+    // c.buttonOpen = c.findObj('#myBtn');
+    c.buttonClose = c.findObj('.close');
+    c.video = c.findObj('#video');
+    // c.video = new Video();
+    // console.log('c.video :', c.video);
     //* ********************  methods ******************** *//
-    c.getTimeData = function(timeSelector, methodType) {
-        var today = new Date(),
-            time = today[methodType](),
-            timePlace = c.findObj('.' + timeSelector);
-        timePlace.text(time < 10 ? '0' + time : time);
-    };
+    /**
+     * @param  {string} timeSelector from html
+     * @param  {byte} timeValue
+     */
     c.setTimeData = function(timeSelector, timeValue) {
-        //today = new Date(),
-
         var timePlace = c.findObj('.' + timeSelector);
-        timePlace.text(timeValue < 10 ? '0' + timeValue : timeValue);
+        if (c.mainDate > c.today) {
+            timePlace.text(timeValue < 10 ? '0' + timeValue : timeValue);
+        } else {
+            timePlace.text('00');
+            c.afterPoster.text('HI').css({
+                'height': '150px',
+                'width': '50%',
+                backgroundColor: '#fff',
+                margin: 'auto'
+            });
+            c.showModal();
+            c.startVideo();
+            clearInterval(c.startCount);
+        }
     };
-    c.main = function() {
-        c.getTimeData('hours', 'getHours');
-        c.getTimeData('min', 'getMinutes');
-        c.getTimeData('sec', 'getSeconds');
-    };
-
-    c.getTimeLeftTest = function() {
-        c.mainDate = new Date(2018, 7, 11, 14, 30, 0);
+    c.remainingTime = function() {
         c.today = new Date();
         c.timeLeft = c.mainDate - c.today;
         let day = 24 * 60 * 60 * 1000,
             hour = 60 * 60 * 1000,
             minute = 60 * 1000,
             second = 1000;
+
         c.setTimeData('days', c.getTimeLeft(c.timeLeft, day));
         c.setTimeData('hours', c.getTimeLeft(c.timeLeft, hour));
         c.setTimeData('min', c.getTimeLeft(c.timeLeft, minute));
         c.setTimeData('sec', c.getTimeLeft(c.timeLeft, second));
-
-        // console.log('//c.getTimeLeft :', c.getTimeLeft(c.timeLeft, day));
-        // // // console.log('c.timeLeft 3 :', c.timeLeft);
-        // console.log('c.getTimeLeft :', c.getTimeLeft(c.timeLeft, hour));
-        // // // console.log('c.timeLeft 4 :', c.timeLeft);
-        // console.log('c.getTimeLeft :', c.getTimeLeft(c.timeLeft, minute));
-        // // // console.log('c.timeLeft 5 :', c.timeLeft);
-        // console.log('c.getTimeLeft :', c.getTimeLeft(c.timeLeft, second));
-        // console.log('//c.timeLeft 6 :', c.timeLeft);
-        // dayLeft = Math.floor(c.timeLeft / day);
-        // c.timeLeft -= (day * dayLeft);
-        // hoursLeft = Math.floor(c.timeLeft / hour);
-        // c.timeLeft -= (hour * hoursLeft);
-        // minutesLeft = Math.floor(c.timeLeft / minute);
-        // c.timeLeft -= (minute * minutesLeft);
-        // secondsLeft = Math.floor(c.timeLeft / second);
-        // console.info('(dayLeft:', dayLeft + ', ' + 'hoursLeft:', hoursLeft + ', ' + 'minutesLeft:', minutesLeft + ', ' + 'secondsLeft:', secondsLeft + ');');
     };
-    c.getTimeLeft = function(oTimeLeft, intTime) {
-        var temp = 0;
 
-        // console.log('c.timeLeft 1 :', c.timeLeft);
-        temp = Math.floor(oTimeLeft / intTime);
-        c.timeLeft -= (intTime * temp);
-        // console.log('c.timeLeft 2 :', c.timeLeft);
-        // console.log('temp :', temp);
+
+    /**
+     * @param  {long int} timeLeft
+     * @param  {int} time
+     */
+    c.getTimeLeft = function(timeLeft, time) {
+        var temp = 0;
+        temp = Math.floor(timeLeft / time);
+        c.timeLeft -= (time * temp);
         return temp;
     };
+    c.setTimeNow = function() {
+        c.mainDate = new Date();
+        c.mainDate.setSeconds(c.mainDate.getSeconds() + 7);
+    };
 
+    /**
+     * * modal window 
+     */
+    c.showModal = function() {
+        c.myModal.css({ display: 'block' });
+    };
+    c.closeModal = function() {
+        c.myModal.css({ display: 'none' });
+    };
+    c.clickOtherField = function() {
+        if ($(event.target).hasClass('modal')) {
+            c.myModal.css({ display: 'none' });
+        }
+    };
+    c.startVideo = function() {
+        src = c.video.attr('src');
+        c.video.attr('src', src + '&autoplay=1');
+    };
     //* ********************  events ******************** *//
-    setInterval(c.getTimeLeftTest, 1000);
-    // c.getTimeLeftTest();
 
+    c.startCount = setInterval(c.remainingTime, 1000);
+    c.buttonCheck.click(c.setTimeNow);
+
+    // c.buttonOpen.click(c.showModal);
+    c.buttonClose.click(c.closeModal);
+    c.modal.click(c.clickOtherField);
 }
 Clock.prototype = new Component();
 //? delay() задержка запуска
