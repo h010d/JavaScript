@@ -8,51 +8,51 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="poster background-color__desc shadowtext">
-            <p>Осталось</p>
-        </div>
-        <div class="container">
-            <ul class="clock" id="clock1">
-                <li class="days"></li>
-                <li class="point">:</li>
-                <li class="hours"></li>
-                <li class="point">:</li>
-                <li class="min"></li>
-                <li class="point">:</li>
-                <li class="sec"></li>
+<div class="wrapper">
+    <div class="poster background-color__desc shadowtext">
+        <p>Осталось</p>
+    </div>
+    <div class="container">
+        <ul class="clock" id="clock1">
+            <li class="days"></li>
+            <li class="point">:</li>
+            <li class="hours"></li>
+            <li class="point">:</li>
+            <li class="min"></li>
+            <li class="point">:</li>
+            <li class="sec"></li>
+        </ul>
+        <div class="description background-color__desc">
+            <ul class="desc-bottom">
+                <li class="description-inner">дней</li>
+                <li class="description-inner"></li>
+                <li class="description-inner">часов</li>
+                <li class="description-inner"></li>
+                <li class="description-inner">минут</li>
+                <li class="description-inner"></li>
+                <li class="description-inner">секунд</li>
             </ul>
-            <div class="description background-color__desc">
-                <ul class="desc-bottom">
-                    <li class="description-inner">дней</li>
-                    <li class="description-inner"></li>
-                    <li class="description-inner">часов</li>
-                    <li class="description-inner"></li>
-                    <li class="description-inner">минут</li>
-                    <li class="description-inner"></li>
-                    <li class="description-inner">секунд</li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="wrapper__check">
-                <button class="button__check">проверить</button>
-            </div>
-            <!-- <button id="myBtn">Open Modal</button> -->
-            <div id="myModal" class="modal background-color__desc">
-                <!-- Modal content -->
-                <div class="modal-content background-color__desc">
-                    <span class="close" title="close">&times;</span>
-                    <!-- <iframe width="560" height="315" src="http://www.youtube.com/embed/mvXd70kxk08?rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen id="video"></iframe> -->
-                </div>
+        <div class="wrapper__check">
+            <button class="button__check">проверить</button>
+        </div>
+        <!-- <button id="myBtn">Open Modal</button> -->
+        <div id="myModal" class="modal background-color__desc">
+            <!-- Modal content -->
+            <div class="modal-content background-color__desc">
+                <span class="close" title="close">&times;</span>
+                <!-- <iframe width="560" height="315" src="http://www.youtube.com/embed/mvXd70kxk08?rel=0&amp;controls=1&amp;showinfo=1" frameborder="0" allowfullscreen id="video"></iframe> -->
             </div>
         </div>
     </div>
-    <script src="../scripts/jquery-3.3.1.min.js"></script>
-    <script src="../scripts/component.js"></script>
-    <script src="../scripts/clock.js"></script>
-    <script>
-        var cl = new Clock(".container");
-    </script>
+</div>
+<script src="../scripts/jquery-3.3.1.min.js"></script>
+<script src="../scripts/component.js"></script>
+<script src="../scripts/clock.js"></script>
+<script>
+	var cl = new Clock('.container');
+</script>
 </body>
 
 </html>
