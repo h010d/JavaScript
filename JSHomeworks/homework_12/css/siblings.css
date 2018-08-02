@@ -71,27 +71,36 @@ div {
 
 .right_one {
     right: 360px;
+    background-color: #64bbbe98;
 }
 
 .right_two {
     right: 260px;
+    background-color: #64bbbe98;
 }
 
 .right_three {
     right: 160px;
+    background-color: #64bbbe98;
 }
 
 .right_four {
     right: 60px;
+    background-color: #64bbbe98;
 }
 
 .left_one {
-    left: 170px;
+    left: 200px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: flex-end;
+    background-color: #dee67291;
+}
+
+.left_two {
+    background-color: #dee67291;
 }
 
 .four_lvl {
@@ -103,15 +112,16 @@ div {
 }
 
 .four_one {
-    left: 120px;
+    left: 170px;
+    background-color: #6862bd50;
 }
 
 .four_left {
-    left: 270px;
+    left: 290px;
 }
 
 .four_right {
-    left: 370px;
+    left: 380px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -125,7 +135,7 @@ div {
     width: 75px;
     height: 35px;
     background-color: #14747446;
-    left: 350px;
+    left: 370px;
 }
 
 .showInfo {
@@ -194,7 +204,6 @@ div {
 }
 
 .choise__method {
-    height: 15px;
+    height: 12px;
     margin-left: 20px;
-    outline: 1px solid greenyellow;
 }
