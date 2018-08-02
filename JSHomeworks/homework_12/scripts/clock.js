@@ -4,8 +4,8 @@
  * @summary short description for the file
  * @author Anatolii Kravchenko
  *
- * Created at     : 2018-07-30 21:00:47 
- * Last modified  : 2018-07-31 03:23:13
+ * Created at     : 2018-07-30 21:00:47
+ * Last modified  : 2018-08-02 01:03:16
  */
 /**
  * @param {oObject} sSelector from html
@@ -20,16 +20,11 @@ function Clock(sSelector) {
     c.afterPoster = c.findObj('.after__poster');
     c.today = 0;
     c.startCount;
-    /**
-     * * modal window 
-     */
+    //* ********************  modal window  ******************** *//
     c.myModal = c.findObj('#myModal');
     c.modal = c.findObj('.modal');
-    // c.buttonOpen = c.findObj('#myBtn');
     c.buttonClose = c.findObj('.close');
     c.video = c.findObj('#video');
-    // c.video = new Video();
-    // console.log('c.video :', c.video);
     //* ********************  methods ******************** *//
     /**
      * @param  {string} timeSelector from html
@@ -48,10 +43,11 @@ function Clock(sSelector) {
                 margin: 'auto'
             });
             c.showModal();
-            c.startVideo();
             clearInterval(c.startCount);
+
         }
     };
+
     c.remainingTime = function() {
         c.today = new Date();
         c.timeLeft = c.mainDate - c.today;
@@ -65,7 +61,6 @@ function Clock(sSelector) {
         c.setTimeData('min', c.getTimeLeft(c.timeLeft, minute));
         c.setTimeData('sec', c.getTimeLeft(c.timeLeft, second));
     };
-
 
     /**
      * @param  {long int} timeLeft
@@ -82,33 +77,31 @@ function Clock(sSelector) {
         c.mainDate.setSeconds(c.mainDate.getSeconds() + 7);
     };
 
-    /**
-     * * modal window 
-     */
+    //* ********************  modal window  ******************** *//
     c.showModal = function() {
-        c.myModal.css({ display: 'block' });
+        c.myModal.css({
+            display: 'block'
+        });
     };
     c.closeModal = function() {
-        c.myModal.css({ display: 'none' });
+        c.myModal.css({
+            display: 'none'
+        });
     };
     c.clickOtherField = function() {
         if ($(event.target).hasClass('modal')) {
-            c.myModal.css({ display: 'none' });
+            c.myModal.css({
+                display: 'none'
+            });
         }
     };
-    c.startVideo = function() {
-        src = c.video.attr('src');
-        c.video.attr('src', src + '&autoplay=1');
-    };
-    //* ********************  events ******************** *//
+    c.startVideo = function() {};
+    c.stopVideo = function() {};
 
+    //* ********************  events ******************** *//
     c.startCount = setInterval(c.remainingTime, 1000);
     c.buttonCheck.click(c.setTimeNow);
-
-    // c.buttonOpen.click(c.showModal);
     c.buttonClose.click(c.closeModal);
     c.modal.click(c.clickOtherField);
 }
 Clock.prototype = new Component();
-//? delay() задержка запуска
-//?  в .animate(callback);

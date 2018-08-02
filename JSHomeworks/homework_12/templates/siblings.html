@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/siblings.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrapper_inner">
+            <div class="top" id="page1">
+                <div class="two_lvl left rip">
+                    <div class="three_lvl left_one">
+                        <div class="four_lvl four_one"></div>
+                    </div>
+                    <div class="three_lvl left_two rip">
+                        <div class="four_lvl four_left"></div>
+                        <div class="four_lvl four_right">
+                            <div class="five_lvl five_one"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="two_lvl center">
+                    <div class="three_lvl center_one"></div>
+                </div>
+                <div class="two_lvl right">
+                    <div class="three_lvl right_one"></div>
+                    <div class="three_lvl right_two until"></div>
+                    <div class="three_lvl right_three"></div>
+                    <div class="three_lvl right_four"></div>
+                </div>
+            </div>
+        </div>
+        <div class="showInfo"></div>
+        <div class="radio__buttons">
+            <input type="radio" class="choise__method" value="siblings" id="rSiblings" name="rb" checked/><label for="rSiblings"><span>siblings()</span></label>
+            <input type="radio" class="choise__method" value="parent" id="rParent" name="rb" /><label for="rParent"><span>parent()</span></label>
+            <input type="radio" class="choise__method" value="aftparent" id="rAfterParent" name="rb" /><label for="rAfterParent"><span>After parent()</span></label>
+            <input type="radio" class="choise__method" value="parents" id="rParents" name="rb" /><label for="rParents"><span>parents()</span></label>
+            <br>
+            <input type="radio" class="choise__method" value="closest" id="rClosest" name="rb" /><label for="rClosest"><span>closest()</span></label>
+            <input type="radio" class="choise__method" value="children" id="rChildren" name="rb" /><label for="rChildren"><span>children()</span></label>
+            <br>
+            <input type="radio" class="choise__method" value="next" id="rNext" name="rb" /><label for="rNext"><span>next()</span></label>
+            <input type="radio" class="choise__method" value="prev" id="rPrev" name="rb" /><label for="rPrev"><span>prev()</span></label>
+            <br>
+            <input type="radio" class="choise__method" value="nextAll" id="rNextAll" name="rb" /><label for="rNextAll"><span>nextAll()</span></label>
+            <input type="radio" class="choise__method" value="prevAll" id="rPrevAll" name="rb" /><label for="rPrevAll"><span>prevAll()</span></label>
+            <br>
+            <input type="radio" class="choise__method" value="nextUntil" id="rNextUntil" name="rb" /> <label for="rNextUntil"><span>nextUntil()</span></label>
+            <input type="radio" class="choise__method" value="prevUntil" id="rPrevUntil" name="rb" /><label for="rPrevUntil"><span>prevUntil()</span></label>
+        </div>
+
+        <button class="button_clear">clear All</button>
+    </div>
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/component.js"></script>
+    <script src="../scripts/siblings.js"></script>
+    <script>
+        var sb = new Siblings("body");
+    </script>
+</body>
+
+</html>
