@@ -32,6 +32,15 @@ function Siblings(sSelector) {
         s.clearAll(s.clear);
         s.radioList = s.addNamePrefix();
         s.clear = s.radioList;
+        //интересует как можно сократить этот switch:case чтобы 
+        // все методы поместились в одну строку-выражение 
+        // s.getCurrentMethod() отдает нам имя метода === строку  
+        // как можно эту строку поставить в выражение чтобы получился рабочий код такого вида
+        // $(event.target). + <s.getCurrentMethod()> + ().addClass(s.radioList);
+        // идея в том чтобы при возврате имени класса(которое совпадает с именем метода),
+        //не делать больших проверок. Такой код и работать будет быстрее, на мой взгляд.
+        //ну может если нужно то оставить пару проверок,
+        // где идет не четкое соответствие "азвание класса" == "название метода"  
         switch (true) {
             case 'siblings' == s.getCurrentMethod():
                 $(event.target).siblings().addClass(s.radioList);
