@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <?=$title?>
+    </title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul>
+        <?php foreach($subjects as $title => $price) { ?>
+        <li>
+            <?=$title?> -
+                <?=$price?>грн.</li>
+        <?php } ?>
+    </ul>
+    <?php
+		if($_POST){
+    ?>
+        Мы свяжемся с Вами по номеру
+        <?=$tel ?>!
+            <?php
+    }
+    include("intro-form.html"); ?>
+                <!-- <script src=".js"></script> -->
+</body>
+
+</html>
