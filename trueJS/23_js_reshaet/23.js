@@ -8,17 +8,17 @@
 
 'use strict';
 
-class cutNum{
+class cutNum {
     //this.n
     //this.nn
     //this.nnn
-    constructor (a){
-        if (typeof a == 'number' && a>=0 && a<1000){
+    constructor(a) {
+        if (typeof a == 'number' && a >= 0 && a < 1000) {
             this.n = a % 10;
-            this.nn = Math.floor(a/10%10);
-            this.nnn = Math.floor(a/100);
-        }
-        else {
+            this.nn = Math.floor(a / 10 % 10);
+            this.nnn = Math.floor(a / 100);
+            //	this['единицы '] = a % 10;
+        } else {
             console.log('error');
         }
     }
