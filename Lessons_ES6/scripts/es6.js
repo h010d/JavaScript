@@ -249,3 +249,92 @@ class Language {
 }
 let lang1 = new Language('JS', 'Брендан Эйх', 1995);
 console.info(lang1.summary());
+////////////////////* Статические свойства класса  *//////////////////////
+class Personcl {
+
+    constructor(name) {
+        this.name = name;
+        this.qty += 1;
+    }
+}
+Personcl.qty = 0;
+console.log('Personcl.qty :', Personcl.qty);
+let personcc = new Person('Ket');
+console.info(Person.qty);
+console.info('personcc.qty', personcc.qty);
+personcc.qty = 4;
+console.info('personcc.qty', personcc.qty); //?
+////////////////////* Статические методы класса  *//////////////////////
+//* static название_метода(){}
+/*
+принадлежат только классу но не объектам.
+используются для создания вспомогательных функций
+(например указать значение по умолчанию для свойства) */
+////////////////////* Наследование  *//////////////////////
+class Shape {}
+class Rect extends Shape {}
+/* Ключевое слово //* super 
+/* используется для вызова
+/*функций, принадлежащих родителю объекта **/
+class Polygon {
+    constructor(height, width) {
+        this.name = 'Polygon';
+        this.height = height;
+        this.width = width;
+    }
+    sayName() {
+        console.info(`Hi, I am a ${this.name}.`);
+    }
+}
+class Square extends Polygon {
+    constructor(length) {
+        super(length, length);
+        this.name = 'Square';
+    }
+    get area() {
+        return this.height * this.width;
+    }
+}
+let s1 = new Square(5);
+s1.sayName();
+console.log('s1.area :', s1.area);
+////////////////////* Promise  *//////////////////////
+/* Используется для отложенных и 
+асинхронных вычислений
+Может находиться в трех состояниях:
+--ожидание(pending): начальное состояние,
+не выполнено и не отклонено.
+--выполнено(fulfilled): операция завершена успешно
+--отклонено(rejected): операция завершена с ошибкой */
+
+//let promise = new applyForVisa();
+//promise.then(bookHotel, cancelVacation);
+/* или
+promise
+    .then(bookHotel)
+    .catch(cancelVacation);
+bookHotel - функция(fulfilled), если promise выполнится
+cancelVacation - функция(rejected), если promise не выполнится */
+
+let myPromyse = new Promise(
+    (fResolve, fReject) => {
+        console.info('Look here, I start!');
+
+        window.setTimeout(() => {
+            let now = new Date();
+            if (now.getSeconds() % 2) {
+                fResolve('I am done!');
+            } else {
+                fReject('Unfortunatly ...');
+            }
+        }, 2000);
+    }
+);
+
+myPromyse
+    .then((sResultMessage) => {
+        console.info(sResultMessage);
+    })
+    .catch((error) => {
+        console.info('Something went wrong', error);
+    });
