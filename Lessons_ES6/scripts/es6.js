@@ -78,7 +78,10 @@ var maxInArray = Math.max(...array);
 var cat, dog, bird;
 
 function createCollection(name, ...items) {
-    return { name, items };
+    return {
+        name,
+        items
+    };
 }
 
 var animals = createCollection('Animals', cat, dog, bird);
