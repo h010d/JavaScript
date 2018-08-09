@@ -196,9 +196,9 @@ console.info('Square:', square(4, 7), '-- PI:', pi());
 ////////////////////* Shorthand methods  *//////////////////////
 // сокращения методов
 /* let person = {
-    firstName,
-    lastName,
-    method() {}
+		firstName,
+		lastName,
+		method() {}
 };
 person.method(); */
 // * ES5
@@ -314,8 +314,8 @@ console.log('s1.area :', s1.area);
 //promise.then(bookHotel, cancelVacation);
 /* или
 promise
-    .then(bookHotel)
-    .catch(cancelVacation);
+		.then(bookHotel)
+		.catch(cancelVacation);
 bookHotel - функция(fulfilled), если promise выполнится
 cancelVacation - функция(rejected), если promise не выполнится */
 
