@@ -1,0 +1,1 @@
+$('.data').load('1data.html h2');
