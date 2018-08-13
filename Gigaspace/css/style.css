@@ -22,26 +22,137 @@
     font-weight: bold;
 }
 
+.temp {
+    width: 100%;
+    /* height: 1px; */
+    outline: 1px dotted white;
+}
+
 body {
     /* background-image: url("../images/BG_mini.png");
 		 */
     background-color: #f0f0f0;
 }
 
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+    /* outline: 5px dotted greenyellow; */
+}
+
+
+/*=============================================
+=            Section comment block            =
+=============================================*/
+
 .section__logo {
     /* Style for "Shape 1" */
+    width: 100%;
     height: 110px;
-    background-color: #c0c0c0;
-    background-image: linear-gradient(to top, #151515 0%, #343434 100%);
+    background: linear-gradient(to top, #151515 0%, #343434 100%);
 }
+
+.block__logo {
+    width: 320px;
+    height: 53px;
+    margin: 30px auto;
+    /* outline: 1px solid #c0c0c0; */
+    float: left;
+}
+
+.logo__image {
+    float: left;
+    width: 46px;
+    height: 51px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.75);
+}
+
+.logo__text_wrapper {
+    float: left;
+    margin: 8px 0 0 12px;
+    display: inline;
+}
+
+.logo__name {
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.75);
+    font-family: "MyriadPro - SemiBold";
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.logo__name_start {
+    color: #CFCFCF;
+}
+
+.logo__name_end {
+    color: #FFA73D;
+}
+
+.logo__text {
+    margin-top: 3px;
+    height: 12px;
+    color: #565656;
+    font-family: "MyriadPro";
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.phone__service {
+    margin-top: 45px;
+    float: right;
+    width: 170px;
+    font-family: "MyriadPro";
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.logo__link {
+    text-decoration: none;
+    color: #606060;
+}
+
+
+/*=====  End of Section comment block  ======*/
+
+
+/*=============================================
+=            Section comment block            =
+=============================================*/
 
 .section__menu {
     /* Style for "Shape 2" */
     height: 60px;
-    background-color: #c0c0c0;
-    background-image: linear-gradient(to top, #f7941d 0%, #f7941d 24%, #f8bb49 76%, #f8bb49 100%);
+    background: linear-gradient(to top, #f7941d 0%, #f7941d 24%, #f8bb49 76%, #f8bb49 100%);
 }
 
-.wrapper {
-    width: 960px;
+.menu {
+    padding: 21px 0;
+    width: 100%;
 }
+
+.menu__item {
+    padding: 13px 11px;
+    color: #151515;
+    display: inline;
+}
+
+.menu__link {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    color: #333333;
+    font-family: "MyriadPro";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu li {
+    margin-left: -12px;
+}
+
+.menu li+li {
+    margin-left: 27px;
+}
+
+
+/*=====  End of Section comment block  ======*/
