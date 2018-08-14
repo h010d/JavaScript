@@ -22,6 +22,14 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: "MyriadPro Regular";
+    src: url("../fonts/MyriadPro/MyriadProRegular/MyriadProRegular.eot");
+    src: url("../fonts/MyriadPro/MyriadProRegular/MyriadProRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro/MyriadProRegular/MyriadProRegular.woff") format("woff"), url("../fonts/MyriadPro/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
 .temp {
     width: 100%;
     /* height: 1px; */
@@ -29,8 +37,8 @@
 }
 
 body {
-    background: url(../Gigaspace_free_psd.jpg) center top no-repeat;
-    /* background-image: url("../images/BG_mini.png"); */
+    /* background: url(../Gigaspace_free_psd.jpg) center top no-repeat; */
+    background-image: url("../images/BG_mini.png");
     /* background-color: #f0f0f0; */
 }
 
@@ -121,7 +129,7 @@ body {
 =            Section comment block            =
 =============================================*/
 
-.separator__over_menu {
+.line__over_menu {
     width: 100%;
     height: 1px;
     background-color: rgba(51, 51, 51, 0.15);
@@ -176,9 +184,11 @@ body {
     margin-left: 27px;
 }
 
-.menu__title {}
+.menu__title {
+    text-align: center;
+}
 
-.separator__under_menu {
+.line__under_menu {
     width: 100%;
     height: 1px;
     background-color: rgba(51, 51, 51, 0.6);
@@ -201,8 +211,8 @@ body {
 /*----------  form login  ----------*/
 
 .form__login {
-    display: block;
-    width: 55%;
+    display: inline-block;
+    width: 54%;
     padding-top: 20px;
     height: 66px;
     /* outline: 1px solid rgb(165, 6, 138); */
@@ -254,9 +264,67 @@ body {
 }
 
 
-/* .position__form {
-    height: 35px;
-} */
+/*----------  basket comment block  ----------*/
+
+.basket__block {
+    width: 45%;
+    display: inline-block;
+    padding-top: 20px;
+    height: 66px;
+}
+
+.position__basket {
+    display: flex;
+    margin-top: 10px;
+}
+
+.img__basket {
+    display: inline-block;
+    height: 28px;
+    margin-left: 39px;
+}
+
+.basket__text {
+    margin-top: 1.5px;
+    margin-left: 10px;
+    width: 450px;
+    font-weight: 900;
+    font-family: "MyriadPro - SemiBold";
+}
+
+.basket__text_top {
+    color: #ff9d00;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.basket__text_bottom {
+    margin-top: 6px;
+    color: #c0c0c0;
+    font-size: 12px;
+}
+
+.basket_save {
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.28px;
+}
+
+.basket_item_text {
+    /* font-family: "MyriadPro - SemiBold"; */
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.14px;
+}
+
+.basket_item_added {
+    font-family: "Myriad Pro";
+    font-weight: 400;
+    font-size: 11.5px;
+    letter-spacing: 0.19px;
+}
 
 
 /*----------  content  ----------*/
