@@ -29,9 +29,9 @@
 }
 
 body {
-    /* background-image: url("../images/BG_mini.png");
-		 */
-    background-color: #f0f0f0;
+    background: url(../Gigaspace_free_psd.jpg) center top no-repeat;
+    /* background-image: url("../images/BG_mini.png"); */
+    /* background-color: #f0f0f0; */
 }
 
 .wrapper {
@@ -69,7 +69,7 @@ body {
 
 .logo__text_wrapper {
     float: left;
-    margin: 8px 0 0 12px;
+    margin: 8px 0 0 15px;
     display: inline;
 }
 
@@ -89,7 +89,8 @@ body {
 }
 
 .logo__text {
-    margin-top: 3px;
+    margin-top: 1px;
+    margin-left: 2px;
     height: 12px;
     color: #565656;
     font-family: "MyriadPro";
@@ -98,7 +99,8 @@ body {
 }
 
 .phone__service {
-    margin-top: 45px;
+    margin-top: 49px;
+    margin-right: -4px;
     float: right;
     width: 170px;
     font-family: "MyriadPro";
@@ -119,6 +121,12 @@ body {
 =            Section comment block            =
 =============================================*/
 
+.separator__over_menu {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(51, 51, 51, 0.15);
+}
+
 .section__menu {
     /* Style for "Shape 2" */
     height: 60px;
@@ -126,24 +134,38 @@ body {
 }
 
 .menu {
-    padding: 21px 0;
+    padding: 20px 0;
     width: 100%;
 }
 
 .menu__item {
-    padding: 13px 11px;
-    color: #151515;
+    /* color: #151515; */
     display: inline;
 }
 
 .menu__link {
+    padding: 9px 11px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
     color: #333333;
     font-family: "MyriadPro";
     font-size: 12px;
     font-weight: 400;
+    text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+/* .menu__item:hover, */
+
+.menu__link:hover {
+    color: #ff9d00;
+    background-color: #151515;
 }
 
 .menu li {
@@ -154,5 +176,98 @@ body {
     margin-left: 27px;
 }
 
+.menu__title {}
+
+.separator__under_menu {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(51, 51, 51, 0.6);
+}
+
 
 /*=====  End of Section comment block  ======*/
+
+
+/*=============================================
+=            main section            =
+=============================================*/
+
+.main_top {
+    height: 86px;
+    /* outline: 1px solid rgb(6, 6, 165); */
+}
+
+
+/*----------  form login  ----------*/
+
+.form__login {
+    display: block;
+    width: 55%;
+    padding-top: 20px;
+    height: 66px;
+    /* outline: 1px solid rgb(165, 6, 138); */
+}
+
+.over__login_block {
+    margin-left: 2px;
+    width: 309px;
+    height: 12px;
+    color: rgba(38, 38, 38, 0.25);
+    font-family: "Myriad Pro";
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.position__form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.img__login {
+    display: inline-block;
+    height: 28px;
+    margin-right: 4px;
+}
+
+.form-group {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.form-control {
+    width: 188px;
+    height: 24px;
+    border: 1px solid #dddddd;
+    background-image: linear-gradient(to top, #ededed 0%, #ffffff 100%);
+}
+
+.btn-login {
+    width: 50px;
+    height: 29px;
+    border: 1px solid #000000;
+    color: #C07601;
+    background-image: linear-gradient(to top, #222222 0%, #000000 49%, #383838 100%);
+    color: rgba(255, 157, 0, 0.75);
+    font-family: "Myriad Pro";
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* .position__form {
+    height: 35px;
+} */
+
+
+/*----------  content  ----------*/
+
+.content {
+    width: 100%;
+    height: 990px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    background-color: #FFFFFF;
+    /* background-color: #333333; */
+}
+
+
+/*=====  End of main section  ======*/
