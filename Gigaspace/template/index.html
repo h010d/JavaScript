@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/material-design-iconic-font.css">
     <title>Gigaspace</title>
 </head>
 
@@ -90,13 +91,13 @@
                     </div>
                     <div class="position__form">
                         <div class="img__login">
-                            <img src="../images/smile.png" alt="smile" srcset="">
+                            <img class="img__login" src="../images/smile2.png" alt="smile" srcset="">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" id="name" type="text" placeholder="  Username" required>
+                            <input class="form-control" id="name" type="text" placeholder="Username" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" id="pass" type="password" placeholder="  Password" required>
+                            <input class="form-control" id="pass" type="password" placeholder="Password" required>
                         </div>
                         <div class="form-group">
                             <button id="sendLogin" class="btn btn-login" type="submit">Log in</button>
@@ -127,7 +128,11 @@
                 <!-- Left block -->
                 <div class="sidebar__left">
                     <div class="search__block">
-                        <div class="search__header"></div>
+                        <div class="search__header">
+                            <div class="search__header-element zmdi-search">
+
+                            </div>
+                        </div>
                         <div class="search__main">
 
                             <!--
@@ -139,8 +144,34 @@
                                 <div class="form__select">
                                     <div class="form__select_down-arrow"> <span class='selectArrow'>&#62</span></div>
                                     <select name="select">
-									<option value="1">Option 1</option>
-									<option value="2">Option 2</option>
+																				<option>Brand</option>
+																				<option value="#">A4Tech</option>
+																				<option value="#">Acer</option>
+																				<option value="#">Acorp</option>
+																				<option value="#">AMD</option>
+																				<option value="#">APC</option>
+																				<option value="#">ASUSTeK</option>
+																				<option value="#">ATI Technologies</option>
+																				<option value="#">BenQ</option>
+																				<option value="#">Brother</option>
+																				<option value="#">Creative</option>
+																				<option value="#">Dell</option>
+																				<option value="#">Hewlett-Packard</option>
+																				<option value="#">Kingmax</option>
+																				<option value="#">LG Electronics</option>
+																				<option value="#">Logitech</option>
+																				<option value="#">NVIDIA</option>
+																				<option value="#">MSI</option>
+																				<option value="#">Patriot Memory</option>
+																				<option value="#">POWERCOM</option>
+																				<option value="#">Samsung</option>
+																				<option value="#">Sapphire</option>
+																				<option value="#">Seagate</option>
+																				<option value="#">Sony</option>
+																				<option value="#">SVEN</option>
+																				<option value="#">Verbatim</option>
+																				<option value="#">Western Digital</option>
+																				<option value="#">XEROX</option>
 							</select>
                                 </div>
                             </form>
@@ -158,8 +189,17 @@
                                 <div class="form__select">
                                     <div class="form__select_down-arrow"> <span class='selectArrow'>&#62</span></div>
                                     <select name="select">
-									<option value="1">Option 1</option>
-									<option value="2">Option 2</option>
+																				<option value="1">Poduct</option>
+																				<option value="Beamers">Beamers</option>
+																				<option>Computer casing</option>
+																				<option>DVD / BluRay</option>
+																				<option>Graphic cards</option>
+																				<option>Memory</option>
+																				<option>Motherboards</option>
+																				<option>Data / Hard Disc Drives</option>
+																				<option>Processors</option>
+																				<option>Monitors</option>
+																				<option>Cooling</option>
 							</select>
                                 </div>
                             </form>
@@ -168,7 +208,10 @@
 ////        Конец - select Poduct   ////
 ////////////////////////////////////////
 -->
-                            <div class="search__help_text"></div>
+                            <div class="search__btn-block">
+                                <p class="search__btn_text">Search any product in our database.</p>
+                                <button class="search__btn" type="submit">Search</button>
+                            </div>
                         </div>
                     </div>
                     <div class="section__accordion">
@@ -196,9 +239,25 @@
                 </div>
                 <!-- Right block -->
                 <div class="sidebar__right">
+                    <div class="main__poster">
+                        <div class="main__poster-header_gradient">
+                            <H3 class="main__poster-header">ASUS G51J GAMING LAPTOP</H3>
+                        </div>
+                        <p class="main__poster-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dui libero, ornare et fermentum a, congue eu nibh. Suspendisse commodo enim vel mi scelerisque viverra. Vestibulum a lectus a eros varius congue pulvinar id lacus.
+                            Duis rutrum justo sed massa varius tincidunt.</p>
+                        <img class="photo_item" src="../images/notebook.png" alt="notebook">
+                        <div class="main__poster_box-info"> <span class="box-info">Comes with free sleeve and Logitech Wireless Mouse!</span></div>
+                        <div class="main__poster-cell">
+                            <img class="poster_cell-img" src="../images/cell.png" alt="cell">
+                            <div class="poster_cell-text">&euro; <span class="cost">1099</span>&sbquo;&ndash;</div>
+                        </div>
+                        <div class="poster_btn">
+                            <button class="btn_view  view__product" type="submit">View product</button>
+                            <button class="btn_view  add__tocart" type="submit">Add to cart</button>
+                        </div>
 
+                    </div>
                 </div>
-
             </section>
         </main>
         <footer>
