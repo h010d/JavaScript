@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- убрать после окончания этот div  -->
     <div class="temp"></div>
 
     <div class="section__logo">
@@ -113,7 +114,7 @@
                                 <span class="basket_view">View basket</span>-
                                 <span class="basket_save">Save Basket</span>-
                                 <span class="basket_item_text">Last item added:</span>
-                                <span class="basket_item_added">1x Asus GTX456 GFX Card</span>
+                                <span class="basket_item">1x Asus GTX456 GFX Card</span>
 
                             </p>
 
@@ -123,9 +124,86 @@
                 </div>
             </section>
             <section class="content">
+                <!-- Left block -->
+                <div class="sidebar__left">
+                    <div class="search__block">
+                        <div class="search__header"></div>
+                        <div class="search__main">
+
+                            <!--
+				////////////////////////////////////////
+				////       Начало - select Brand    ////
+				////////////////////////////////////////
+				-->
+                            <form class="form" action="/" method="post">
+                                <div class="form__select">
+                                    <div class="form__select_down-arrow"> <span class='selectArrow'>&#62</span></div>
+                                    <select name="select">
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
+							</select>
+                                </div>
+                            </form>
+                            <!--
+				////////////////////////////////////////
+				////        Конец - select Brand    ////
+				////////////////////////////////////////
+				-->
+                            <!--
+				////////////////////////////////////////
+				////       Начало - select Poduct   ////
+				////////////////////////////////////////
+				-->
+                            <form class="form" action="/" method="post">
+                                <div class="form__select">
+                                    <div class="form__select_down-arrow"> <span class='selectArrow'>&#62</span></div>
+                                    <select name="select">
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
+							</select>
+                                </div>
+                            </form>
+                            <!--
+////////////////////////////////////////
+////        Конец - select Poduct   ////
+////////////////////////////////////////
+-->
+                            <div class="search__help_text"></div>
+                        </div>
+                    </div>
+                    <div class="section__accordion">
+                        <ul class='menu_accordion' id="menu1">
+                            <li class='accordion__item accordion__item-space'><a href='#' class='accordion__link'>Hardware products</a>
+                                <ul class='submenu '>
+                                    <li class='accordion__item '><a href='# ' class='accordion__link '>Создать</a></li>
+                                    <li class='accordion__item '><a href='# ' class='accordion__link '>Открыть</a></li>
+                                    <li class='accordion__item '><a href='# ' class='accordion__link '>Сохранить</a></li>
+                                </ul>
+                            </li>
+                            <li class='accordion__item accordion__item-space'><a href='#' class='accordion__link'>Software products</a></li>
+                            <li class='accordion__item accordion__item-space'><a href='#' class='accordion__link'>Entertainment</a>
+                                <ul class='submenu '>
+                                    <li class='accordion__item '><a href='# ' class='accordion__link '>Список</a></li>
+                                    <li class='accordion__item '><a href='# ' class='accordion__link '>Таблица</a></li>
+                                    <li class='accordion__item '><a href='# ' class='accordion__link '>Плиточка</a></li>
+                                </ul>
+                            </li>
+                            <li class='accordion__item accordion__item-space	'><a href='#' class='accordion__link'>PC / Notebooks</a></li>
+                            <li class='accordion__item accordion__item-space'><a href='#' class='accordion__link'>Server / Networking</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Right block -->
+                <div class="sidebar__right">
+
+                </div>
 
             </section>
         </main>
+        <footer>
+
+        </footer>
     </div>
 </body>
 

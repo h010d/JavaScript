@@ -40,6 +40,21 @@ body {
     /* background: url(../Gigaspace_free_psd.jpg) center top no-repeat; */
     background-image: url("../images/BG_mini.png");
     /* background-color: #f0f0f0; */
+    box-sizing: border-box;
+    /* opacity: 0.5; */
+}
+
+button:active,
+input:active,
+input:focus,
+button:focus,
+select:focus,
+select:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
 }
 
 .wrapper {
@@ -152,7 +167,7 @@ body {
 }
 
 .menu__link {
-    padding: 9px 11px;
+    padding: 8px 10px;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
     color: #333333;
     font-family: "MyriadPro";
@@ -181,11 +196,11 @@ body {
 }
 
 .menu li+li {
-    margin-left: 27px;
+    margin-left: 30px;
 }
 
 .menu__title {
-    text-align: center;
+    /* text-align: center; */
 }
 
 .line__under_menu {
@@ -204,7 +219,6 @@ body {
 
 .main_top {
     height: 86px;
-    /* outline: 1px solid rgb(6, 6, 165); */
 }
 
 
@@ -212,10 +226,9 @@ body {
 
 .form__login {
     display: inline-block;
-    width: 54%;
+    width: 55%;
     padding-top: 20px;
     height: 66px;
-    /* outline: 1px solid rgb(165, 6, 138); */
 }
 
 .over__login_block {
@@ -230,7 +243,7 @@ body {
 
 .position__form {
     display: flex;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .img__login {
@@ -245,14 +258,16 @@ body {
 }
 
 .form-control {
-    width: 188px;
+    padding: 0 0 0 10px;
+    color: rgba(83, 83, 83, 0.747);
+    width: 178px;
     height: 24px;
     border: 1px solid #dddddd;
     background-image: linear-gradient(to top, #ededed 0%, #ffffff 100%);
 }
 
 .btn-login {
-    width: 50px;
+    width: 51px;
     height: 29px;
     border: 1px solid #000000;
     color: #C07601;
@@ -261,13 +276,14 @@ body {
     font-family: "Myriad Pro";
     font-size: 12px;
     font-weight: 400;
+    cursor: pointer;
 }
 
 
-/*----------  basket comment block  ----------*/
+/*----------  basket  block  ----------*/
 
 .basket__block {
-    width: 45%;
+    width: 44%;
     display: inline-block;
     padding-top: 20px;
     height: 66px;
@@ -281,11 +297,11 @@ body {
 .img__basket {
     display: inline-block;
     height: 28px;
-    margin-left: 39px;
+    margin-left: 30px;
 }
 
 .basket__text {
-    margin-top: 1.5px;
+    margin-top: 1px;
     margin-left: 10px;
     width: 450px;
     font-weight: 900;
@@ -299,43 +315,219 @@ body {
 }
 
 .basket__text_bottom {
-    margin-top: 6px;
+    margin-top: 5px;
     color: #c0c0c0;
     font-size: 12px;
 }
 
 .basket_save {
-    font-family: "Myriad Pro";
     font-weight: 400;
     font-size: 12px;
-    letter-spacing: 0.28px;
 }
 
-.basket_item_text {
-    /* font-family: "MyriadPro - SemiBold"; */
-    font-family: "Myriad Pro";
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.14px;
+.basket_save:hover,
+.basket_view:hover {
+    color: #383838;
+    cursor: pointer;
+    padding: 1px 0;
 }
 
-.basket_item_added {
-    font-family: "Myriad Pro";
+.basket_item_text,
+.basket_item {
     font-weight: 400;
-    font-size: 11.5px;
-    letter-spacing: 0.19px;
+    font-size: 11.61px;
 }
 
 
 /*----------  content  ----------*/
 
 .content {
-    width: 100%;
-    height: 990px;
+    height: 970px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     background-color: #FFFFFF;
-    /* background-color: #333333; */
+    padding: 11px 10px;
+}
+
+
+/*----------  Left block  ----------*/
+
+.sidebar__left {
+    float: left;
+    height: 100%;
+    width: 310px;
+}
+
+
+/*=============================================
+=            search__block           =
+=============================================*/
+
+.search__block {
+    height: 180px;
+    width: 308px;
+    margin-bottom: 15px;
+    background-image: linear-gradient(to top, #ededed 0%, #ffffff 100%);
+}
+
+.search__header {
+    /* margin-bottom: 15px; */
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(to top, #000000 0%, #45494d 100%);
+    border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    -ms-border-radius: 6px 6px 0 0;
+    -o-border-radius: 6px 6px 0 0;
+}
+
+.search__main {
+    height: 150px;
+    width: 306px;
+    border: 1px solid #cccccc8f;
+}
+
+
+/*=============================================
+=           form__select          =
+=============================================*/
+
+.form {
+    width: 93%;
+    height: 30px;
+    margin: 14px 10px;
+    border: 1px solid #cccccc;
+    background-image: linear-gradient(to top, #ededed 0%, #ffffff 100%);
+}
+
+.form__select {
+    color: #7777775e;
+    font-family: "Myriad Pro";
+    font-size: 12px;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.form__select_down-arrow {
+    height: 31px;
+    width: 35px;
+    position: absolute;
+    right: 0;
+    top: -0.5px;
+    text-align: center;
+    background-image: linear-gradient(to top, #f7941d 0%, #f7941d 24%, #f8bb49 76%, #f8bb49 100%);
+}
+
+.selectArrow {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 8px;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.form__select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    background: none;
+    border: none;
+    font-size: 14px;
+}
+
+
+/*=============================================
+=            menu__accordion            =
+=============================================*/
+
+.menu_accordion {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.accordion__item-space {
+    margin-bottom: 9px;
+}
+
+.accordion__item {
+    /* background: none repeat scroll 0 0 #EEEEEE; */
+    width: 308px;
+    height: 41px;
+    border: 1.5px solid #cccccc98;
+    background-color: #efefef;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.accordion__link {
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    padding: 3px 5px;
+    text-decoration: none;
+    color: #333333;
+    font-family: "MyriadPro - SemiBold";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.submenu {
+    background: none repeat scroll 0 0 #DDDDDD;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.accordion__item:hover {
+    /* background: none repeat scroll 0 0 #ADD8E6; */
+    background-color: #a0a0a0;
+    cursor: pointer;
+}
+
+
+/*=====  End of menu__accordion  ======*/
+
+
+/*----------  Right block  ----------*/
+
+.sidebar__right {
+    float: right;
+    height: 100%;
+    width: 620px;
+    outline: 1px dotted red;
 }
 
 
 /*=====  End of main section  ======*/
+
+
+/*=============================================
+=            FOOTER            =
+=============================================*/
+
+footer {
+    height: 100px;
+}
+
+
+/*=====  End of FOOTER  ======*/
+
+
+/*=====  End of Section comment block  ======*/
