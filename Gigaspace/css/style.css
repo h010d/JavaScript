@@ -47,7 +47,7 @@ body {
     background-image: url("../images/BG_mini.png");
     /* background-color: #f0f0f0; */
     box-sizing: border-box;
-    /* opacity: 0.7; */
+    /* opacity: 0.5; */
 }
 
 button:active,
@@ -653,10 +653,16 @@ button::-moz-focus-inner {
 }
 
 .photo_item {
-    margin-top: 36px;
-    margin-left: 7px;
+    margin-top: 37px;
+    margin-left: 2px;
     height: 179px;
     width: 200px;
+}
+
+.poster__cell {
+    float: right;
+    width: 50%;
+    height: 230px;
 }
 
 .main__poster_box-info {
@@ -671,6 +677,7 @@ button::-moz-focus-inner {
     -moz-border-radius: 0 5px 5px 0;
     -ms-border-radius: 0 5px 5px 0;
     -o-border-radius: 0 5px 5px 0;
+    clear: both;
 }
 
 .box-info {
@@ -687,7 +694,9 @@ button::-moz-focus-inner {
 
 .main__poster-cell {
     display: inline-block;
-    position: absolute;
+    float: right;
+    margin-right: 205px;
+    margin-top: -144px;
 }
 
 .poster_cell-img {
@@ -696,8 +705,8 @@ button::-moz-focus-inner {
 }
 
 .poster_cell-text {
-    margin-top: -96px;
-    margin-left: 70px;
+    margin-top: -94px;
+    margin-left: 66px;
     color: #F79C26;
     background-clip: text;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
@@ -716,7 +725,7 @@ button::-moz-focus-inner {
     display: inline-block;
     float: right;
     margin-right: 13px;
-    margin-top: -55px;
+    margin-top: 19px;
     width: 194px;
 }
 
@@ -1004,76 +1013,60 @@ footer {
 
 /*=====  End of FOOTER  ======*/
 
-@media screen and (max-width: 1272px) {
-    .menu {
-        margin-left: 5%;
-    }
-}
-
-@media screen and (max-width: 1105px) {
-    body {
-        box-sizing: border-box;
-    }
-    .wrapper {
-        width: 90%;
-    }
-    .sidebar__left {
-        width: 33.3%;
-        padding: 0 5px;
-        box-sizing: border-box;
-    }
-    .sidebar__right {
-        width: 66.6%;
-        padding: 0 5px;
-        box-sizing: border-box;
-    }
-}
-
 @media screen and (max-width: 1080px) {
-    .form__login {
-        padding-top: 7px;
+    .wrapper {
+        width: 95%;
     }
+    .menu {
+        margin-left: 15px;
+    }
+    .form__login {
+        width: 49%;
+        padding-top: 12px;
+    }
+    .form-group {
+        margin-left: 5px;
+    }
+    .form-control {
+        width: 140px;
+    }
+    /*******************  basket  ****************** */
     .basket__block {
-        /* width: 44%; */
+        width: 50%;
         padding-top: 0;
-        /* height: 66px; */
     }
     .position__basket {
         margin-top: 0;
     }
+    .img__basket {
+        margin-left: 0;
+    }
+    /*----------  Content block  ----------*/
+    .sidebar__left {
+        width: 30%;
+    }
+    .sidebar__right {
+        width: 69%;
+    }
+    /************* search block *************/
     .search__block {
         width: 100%;
     }
+    .search__btn_text {
+        margin-top: 0;
+        display: inline-block;
+        width: 60%;
+        text-align: center;
+        /* text-align: center; */
+    }
+    .search__btn {
+        width: 70px;
+    }
+    /************* accordion block *************/
     .accordion__item {
         width: 100%;
     }
-    .search__btn {
-        width: 25%;
-    }
-    .photo_item {
-        margin-top: 55px;
-        margin-left: 17px;
-        height: 119px;
-        width: 130px;
-    }
-    .main__poster_box-info {
-        float: right;
-        margin-top: 52px;
-        margin-right: 13px;
-        width: 45%;
-        height: 60px;
-    }
-    .poster_cell-img {
-        margin-top: 10px;
-        margin-left: 42px;
-    }
-    .poster_btn {
-        display: inline-block;
-        float: right;
-        margin-right: 13px;
-        margin-top: -35px;
-        width: 35%;
-    }
+    /************* Right block *************/
     .card__item {
         width: 49%;
         padding-bottom: 16px;
@@ -1094,4 +1087,154 @@ footer {
     }
 }
 
-@media screen and (max-width: 968px) {}
+@media screen and (max-width: 968px) {
+    .wrapper {
+        width: 90%;
+        min-width: 920px;
+    }
+    .menu {
+        padding: 15px 0;
+    }
+    .section__menu {
+        height: 45px;
+    }
+    .menu li+li {
+        margin-left: 10px;
+    }
+    .form__login {
+        min-width: 390px;
+        margin-left: 5px;
+    }
+    .form-group {
+        margin-left: 5px;
+    }
+    .btn-login {
+        margin-top: 0;
+        width: 50px;
+        height: 25px;
+    }
+    .content {
+        height: 925px;
+    }
+    .sidebar__left {
+        min-width: 230px;
+    }
+    .sidebar__right {
+        min-width: 565px;
+    }
+    .search__block {
+        height: 153px;
+    }
+    .search__header {
+        height: 20px;
+    }
+    .search__header-element:before {
+        margin-top: 3px;
+    }
+    .search__header-element {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+    .form {
+        height: 25px;
+    }
+    .form__select_down-arrow {
+        height: 100%;
+        width: 28px;
+    }
+    .selectArrow {
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+    .search__btn-block {
+        margin-top: 7px;
+    }
+    .search__btn_text {
+        text-align: center;
+    }
+    .search__btn {
+        font-size: 12px;
+        height: 25px;
+        width: 55px;
+    }
+    .accordion__link {
+        font-size: 13px;
+        padding: 10px 15px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+    }
+    .goods {
+        margin-top: 10px;
+    }
+    .card__item {
+        padding-bottom: 10px;
+    }
+    .item__image {
+        width: 100%;
+        height: 120px;
+    }
+    .card_btn {
+        margin: 5px auto;
+        width: 87%;
+    }
+}
+
+@media (min-width: 675px) and (max-width: 949px) {
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+        min-width: 675px;
+    }
+    .menu li+li {
+        margin-left: 5px;
+    }
+    .main_top {
+        height: 124px;
+    }
+    .basket__block {
+        width: 100%;
+    }
+    .sidebar__left {
+        display: none;
+    }
+    .sidebar__right {
+        width: 100%;
+    }
+    .links__hot-products {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 674px) {
+    .wrapper {
+        width: 90%;
+        margin: 0 auto;
+        min-width: 100px;
+    }
+    .menu {
+        display: none;
+    }
+    .section__menu {
+        display: none;
+    }
+    .menu li+li {
+        display: none;
+    }
+    .form__login {
+        display: none;
+    }
+    .sidebar__left {
+        display: none;
+    }
+    .sidebar__right {
+        width: 100%;
+        min-width: 20px;
+    }
+    .poster__cell {
+        display: none;
+    }
+}
