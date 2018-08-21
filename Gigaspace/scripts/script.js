@@ -4,7 +4,7 @@ function Giga(sSelector) {
     var h = window.screen.availHeight;
     var w = window.screen.availWidth;
     // console.log(window.screen.height, window.screen.availHeight);
-    console.log(window.screen.width, window.screen.height);
+    // console.log(window.screen.width, window.screen.height);
     var ScreenWidth = screen.width;
     var ScreenHeight = screen.height;
     // alert(ScreenWidth + 'x' + ScreenHeight);

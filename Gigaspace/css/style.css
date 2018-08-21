@@ -1183,7 +1183,7 @@ footer {
     }
 }
 
-@media (min-width: 675px) and (max-width: 949px) {
+@media screen and (max-width: 949px) {
     .wrapper {
         width: 95%;
         margin: 0 auto;
@@ -1198,18 +1198,35 @@ footer {
     .basket__block {
         width: 100%;
     }
+    .content {
+        height: 1040px;
+    }
     .sidebar__left {
         display: none;
     }
     .sidebar__right {
         width: 100%;
     }
+    .photo_item {
+        margin-left: 40px;
+    }
+    .item__image {
+        height: 180px;
+    }
+    .item__image-content {
+        height: 155px;
+        width: 188px;
+    }
     .links__hot-products {
         margin-left: 0;
     }
 }
 
-@media (min-width: 100px) and (max-width: 675px) {
+@media screen and (max-width: 734px) {}
+
+@media screen and (max-width: 684px) {}
+
+@media screen and (max-width: 675px) {
     .wrapper {
         width: 95%;
         margin: 0 auto;
@@ -1234,21 +1251,26 @@ footer {
         width: 100%;
         min-width: 20px;
     }
-    .poster__cell {
-        display: none;
+}
+
+@media screen and (max-width: 667px) {
+    .content {
+        height: 1042px;
+    }
+    .photo_item {
+        margin-left: 20px;
+    }
+    .bottom__block {
+        height: 185px;
     }
 }
 
-
-/* my phone */
-
-@media (max-width: 360px) {
+@media screen and (max-width: 414px) {
     .wrapper {
         box-sizing: border-box;
         width: 100%;
         margin: 0 0;
-        min-width: 300px;
-        max-width: 360px
+        max-width: 414px
     }
     .section__logo {
         width: 100%;
@@ -1266,9 +1288,6 @@ footer {
         width: 90%;
         font-size: 22px;
     }
-    .menu {
-        display: none;
-    }
     /*----------  form login block  ----------*/
     .main_top {
         height: 202px;
@@ -1281,17 +1300,18 @@ footer {
         margin-left: 0;
     }
     .over__login_block {
-        width: 90%;
-        margin: 10px auto;
+        width: 80%;
+        margin: 0px auto;
         height: 30px;
         font-size: 16px;
         font-weight: 600;
+        text-align: start;
     }
     .position__form {
         padding: 10px;
         display: block;
-        width: 90%;
-        margin: 0 auto;
+        width: 85%;
+        margin: 5px auto;
     }
     .img__login {
         display: none;
@@ -1351,7 +1371,7 @@ footer {
         margin-top: 3px;
         font-size: 14px;
     }
-    /*----------  Subsection comment block  ----------*/
+    /*----------  content block  ----------*/
     .content {
         height: 1672px;
         padding: 5px 0;
@@ -1359,6 +1379,7 @@ footer {
     .sidebar__right {
         width: 100%;
     }
+    /* ************ poster *********** */
     .main__poster {
         width: 100%;
         padding: 5px 0;
@@ -1380,10 +1401,10 @@ footer {
         line-height: 18px;
     }
     .photo_item {
-        margin-top: 17px;
-        margin-left: 2px;
-        height: 130px;
-        width: 145px;
+        margin-top: 8px;
+        margin-left: 8px;
+        height: 152px;
+        width: 170px;
     }
     .poster__cell {
         margin-top: 0px;
@@ -1412,8 +1433,9 @@ footer {
         display: inline-block;
         margin-right: 154px;
         margin-top: 34px;
-        width: 194px;
+        width: 210px;
     }
+    /* ************ goods *********** */
     .goods {
         margin-top: 5px;
         width: 100%;
@@ -1465,7 +1487,7 @@ footer {
         width: 86px;
         font-size: 14px;
     }
-    /* **************************** */
+    /* ************* FOOTER  *************** */
     footer {
         height: 365px;
     }
@@ -1483,7 +1505,6 @@ footer {
         margin-top: 10px;
         width: 47%;
         height: 130px;
-        /* border-right: none; */
     }
     .footer__links-header {
         text-align: center;
@@ -1530,5 +1551,28 @@ footer {
         margin: 10px;
         width: 100%;
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 412px) {}
+
+@media screen and (max-width: 375px) {
+    .photo_item {
+        margin-top: 17px;
+        margin-left: 2px;
+        height: 130px;
+        width: 145px;
+    }
+    .poster_btn {
+        width: 198px;
+    }
+}
+
+
+/* my phone */
+
+@media screen and (max-width: 360px) {
+    .poster_btn {
+        width: 194px;
     }
 }
