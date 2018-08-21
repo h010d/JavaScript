@@ -1467,10 +1467,10 @@ footer {
     }
     /* **************************** */
     footer {
-        height: 500px;
+        height: 365px;
     }
     .bottom__block {
-        height: 500px;
+        height: 365px;
         display: flex;
         flex-direction: column-reverse;
     }
@@ -1481,9 +1481,9 @@ footer {
     /* *********************** */
     .links__quicklinks {
         margin-top: 10px;
-        width: 100%;
+        width: 47%;
         height: 130px;
-        border-right: none;
+        /* border-right: none; */
     }
     .footer__links-header {
         text-align: center;
@@ -1500,7 +1500,8 @@ footer {
     /* ********************* */
     .links__hot-products {
         margin-top: 10px;
-        width: 100%;
+        width: 50%;
+        margin-left: 0;
     }
     /* ******************** */
     .basket__informer {
