@@ -659,7 +659,7 @@ button::-moz-focus-inner {
     width: 200px;
 }
 
-.poster__cell {
+.poster__sale {
     float: right;
     width: 50%;
     height: 230px;
@@ -692,19 +692,19 @@ button::-moz-focus-inner {
     line-height: 21px;
 }
 
-.main__poster-cell {
+.main__poster-sale {
     display: inline-block;
     float: right;
     margin-right: 205px;
     margin-top: -144px;
 }
 
-.poster_cell-img {
+.poster_sale-img {
     margin-top: 40px;
     margin-left: 42px;
 }
 
-.poster_cell-text {
+.poster_sale-text {
     margin-top: -94px;
     margin-left: 66px;
     color: #F79C26;
@@ -1406,7 +1406,7 @@ footer {
         height: 152px;
         width: 170px;
     }
-    .poster__cell {
+    .poster__sale {
         margin-top: 0px;
         display: block;
     }
@@ -1425,7 +1425,7 @@ footer {
         width: 100%;
         text-align: center;
     }
-    .main__poster-cell {
+    .main__poster-sale {
         margin-right: 15px;
         margin-top: -50px;
     }
