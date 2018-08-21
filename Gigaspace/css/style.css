@@ -1265,12 +1265,28 @@ footer {
     }
 }
 
+@media screen and (max-width: 635px) {
+    .wrapper {
+        min-width: 610px
+    }
+    .main__poster-sale {
+        margin-right: 175px;
+    }
+    .box-info {
+        margin-top: 8px;
+        width: 164px;
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+
 @media screen and (max-width: 414px) {
     .wrapper {
         box-sizing: border-box;
         width: 100%;
         margin: 0 0;
-        max-width: 414px
+        max-width: 414px;
+        min-width: 413px;
     }
     .section__logo {
         width: 100%;
@@ -1554,7 +1570,11 @@ footer {
     }
 }
 
-@media screen and (max-width: 412px) {}
+@media screen and (max-width: 412px) {
+    .wrapper {
+        min-width: 400px;
+    }
+}
 
 @media screen and (max-width: 375px) {
     .photo_item {
@@ -1572,6 +1592,9 @@ footer {
 /* my phone */
 
 @media screen and (max-width: 360px) {
+    .wrapper {
+        min-width: 360px
+    }
     .poster_btn {
         width: 194px;
     }
