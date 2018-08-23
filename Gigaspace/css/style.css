@@ -1343,9 +1343,6 @@ footer {
     .photo_item {
         margin-left: 20px;
     }
-    /* .bottom__block {
-        height: 185px;
-    } */
 }
 
 @media screen and (max-width: 635px) {
@@ -1699,9 +1696,6 @@ footer {
 }
 
 @media screen and (max-width: 392px) {
-    * {
-        outline: 1px solid yellowgreen;
-    }
     .basket__block {
         margin-top: 55px;
     }
@@ -1752,7 +1746,7 @@ footer {
 
 @media screen and (max-width: 375px) {
     .content {
-        height: 1804px;
+        height: 1813px;
     }
     .basket__informer {
         padding: 5px;
@@ -1762,6 +1756,10 @@ footer {
     }
     .basket__informer_product-cost {
         margin-right: 0;
+    }
+    .card_btn {
+        margin: 2px auto;
+        width: 70%;
     }
 }
 
