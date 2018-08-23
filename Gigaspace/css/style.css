@@ -1580,7 +1580,7 @@ footer {
     }
     /*----------  content block  ----------*/
     .content {
-        height: 1730px;
+        height: 1735px;
     }
     .sidebar__right {
         width: 100%;
@@ -1760,6 +1760,9 @@ footer {
     .card_btn {
         margin: 2px auto;
         width: 70%;
+    }
+    .bottom__block {
+        margin-top: 10px;
     }
 }
 
