@@ -86,23 +86,25 @@
             <main>
                 <section class="main_top">
                     <div class="form__login">
-                        <div class="over__login_block">
-                            <p class="over__login_text">If you wish to save your shopping card, you will need to log in:</p>
-                        </div>
-                        <div class="position__form">
-                            <div class="img__login">
-                                <img class="img__login" src="../images/smile2.png" alt="smile" srcset="">
+                        <form class="login" action="/" method="post">
+                            <div class="over__login_block">
+                                <p class="over__login_text">If you wish to save your shopping card, you will need to log in:</p>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="Username" required>
+                            <div class="position__form">
+                                <div class="img__login">
+                                    <img class="img__login" src="../images/smile2.png" alt="smile" srcset="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="name" type="text" placeholder="Username" autocomplete="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="pass" type="password" placeholder="Password" autocomplete="current-password" required>
+                                </div>
+                                <div class="form-group">
+                                    <button id="sendLogin" class="btn btn-login" type="submit">Log in</button>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" id="pass" type="password" placeholder="Password" required>
-                            </div>
-                            <div class="form-group">
-                                <button id="sendLogin" class="btn btn-login" type="submit">Log in</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                     <div class="basket__block">
                         <div class="position__basket">
@@ -147,7 +149,7 @@
 				-->
                                 <form class="form" action="/" method="post">
                                     <div class="form__select">
-                                        <div class="form__select_down-arrow"> <span class='selectArrow'>&#62</span></div>
+                                        <div class="form__select_down-arrow"> <span class='selectArrow'>&#62;</span></div>
                                         <select name="select">
 																				<option>Brand</option>
 																				<option value="#">A4Tech</option>
@@ -192,7 +194,7 @@
 				-->
                                 <form class="form" action="/" method="post">
                                     <div class="form__select">
-                                        <div class="form__select_down-arrow"> <span class='selectArrow'>&#62</span></div>
+                                        <div class="form__select_down-arrow"> <span class='selectArrow'>&#62;</span></div>
                                         <select name="select">
 																				<option value="1">Poduct</option>
 																				<option value="Beamers">Beamers</option>
