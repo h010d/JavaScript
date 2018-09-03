@@ -31,7 +31,7 @@ function Giga(sSelector) {
     }
 
     $(window).resize(function() {
-        if ($(window).width() >= 686) {
+        if ($(window).width() >= 710) {
             g.menuLink.css(
                 'display', 'block'
             );
