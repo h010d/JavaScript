@@ -39,11 +39,11 @@
 
 .temp {
     width: 100%;
-    outline: 1px dotted white;
+    /* outline: 1px dotted white; */
 }
 
 * {
-    outline: 1px dotted greenyellow;
+    /* outline: 1px dotted greenyellow; */
 }
 
 body {
@@ -77,6 +77,10 @@ button::-moz-focus-inner {
 .clearfix:after {
     content: " ";
     display: table;
+}
+
+.clearfix {
+    clear: both;
 }
 
 .clearfix:after {
@@ -172,7 +176,7 @@ button::-moz-focus-inner {
 }
 
 .menuToggle {
-    background-color: rgb(195, 205, 50);
+    background-color: #0000003b;
     height: 40px;
     width: 40px;
     cursor: pointer;
@@ -379,7 +383,7 @@ button::-moz-focus-inner {
     background-color: #FFFFFF;
     padding: 11px 10px 0 10px;
     display: inline-block;
-    position: relative;
+    /* position: relative; */
 }
 
 
@@ -391,9 +395,9 @@ button::-moz-focus-inner {
 =============================================*/
 
 .search__block {
-    height: 180px;
+    /* height: 180px; */
     display: inline-block;
-    /* float: left; */
+    float: left;
     width: 33%;
     margin-bottom: 15px;
     background-image: linear-gradient(to top, #ededed 0%, #ffffff 100%);
@@ -550,11 +554,10 @@ button::-moz-focus-inner {
 =============================================*/
 
 .section__accordion {
-    width: 32.3%;
+    width: 33%;
     display: inline-block;
-    position: absolute;
-    left: 10px;
-    top: 207px;
+    margin-top: 194px;
+    margin-left: -33%;
 }
 
 .menu_accordion {
@@ -932,7 +935,7 @@ button::-moz-focus-inner {
 =============================================*/
 
 .bottom__block {
-    height: 171px;
+    /* height: 171px; */
     width: 100%;
     border-bottom: 3px solid rgba(204, 204, 204, 0.685);
     padding-top: 10px;
@@ -1061,7 +1064,7 @@ button::-moz-focus-inner {
 }
 
 footer {
-    height: 260px;
+    /* height: 260px; */
 }
 
 
@@ -1168,20 +1171,26 @@ footer {
 /* Планшеты */
 
 @media only screen and (max-width: 768px) {
+    /* //TODO: текст телефона исправить */
     .basket__block,
     .form__login {
         width: 51%;
         float: left;
     }
+    .over__login_block {
+        width: 97%;
+        margin: 0 auto;
+    }
     .basket__block {
-        padding-top: 15px;
-        margin-top: 15px;
+        padding-top: 0px;
+        margin: 10px 0;
     }
     .search__block {
         float: right;
-        height: 180px;
-        margin-top: -192px;
-        width: 45%;
+        /* height: 180px; */
+        margin-top: -193px;
+        margin-bottom: 0px;
+        width: 48%;
     }
     .section__accordion {
         display: none;
@@ -1190,6 +1199,7 @@ footer {
         width: 100%;
         margin-top: 0;
     }
+    /* //TODO: текст постера сделать 90% */
 }
 
 @media only screen and (max-width: 736px) {
@@ -1220,7 +1230,7 @@ footer {
     .block__logo {
         height: 100%;
         margin: 0;
-        outline: 1px solid #c0c0c0;
+        /* outline: 1px solid #c0c0c0; */
     }
     .logo__image {
         display: none;
@@ -1233,15 +1243,72 @@ footer {
     }
     .phone__service {
         margin-top: 17px;
+        min-width: 225px;
     }
     .section__menu {
         height: 40px;
     }
+    /*----------  start menuToggle block  ----------*/
     .menuToggle {
         display: block;
+        position: relative;
     }
+    .menuToggle__line,
+    .menuToggle__line::before,
+    .menuToggle__line::after {
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 70%;
+        top: 50%;
+        margin-top: -1px;
+        margin-left: 5px;
+        background-color: rgba(0, 0, 0, 0.658);
+    }
+    .menuToggle__line::before,
+    .menuToggle__line::after {
+        content: "";
+        width: 100%;
+        margin-left: 0px;
+        transition: .2s;
+        -webkit-transition: .2s;
+        -moz-transition: .2s;
+        -ms-transition: .2s;
+        -o-transition: .2s;
+    }
+    .menuToggle__line::before {
+        transform: translateY(-8px);
+        -webkit-transform: translateY(-8px);
+        -moz-transform: translateY(-8px);
+        -ms-transform: translateY(-8px);
+        -o-transform: translateY(-8px);
+    }
+    .menuToggle__line::after {
+        transform: translateY(7px);
+        -webkit-transform: translateY(7px);
+        -moz-transform: translateY(7px);
+        -ms-transform: translateY(7px);
+        -o-transform: translateY(7px);
+    }
+    .menuToggle-active .menuToggle__line {
+        height: 0;
+    }
+    .menuToggle-active .menuToggle__line::before {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+    }
+    .menuToggle-active .menuToggle__line::after {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+    }
+    /*----------  End menuToggle block  ----------*/
     .menu {
-        display: none;
         width: 75%;
         padding: 0;
         display: flex;
@@ -1250,6 +1317,7 @@ footer {
         background-color: rgb(236, 236, 236);
         justify-content: flex-start;
         margin: 0;
+        display: none;
     }
     .menu li {
         margin-left: 0;
@@ -1280,9 +1348,62 @@ footer {
         color: #ff9d00;
         background-color: rgb(209, 209, 209);
     }
+    .main__poster-paragraph {
+        margin: 0 2%;
+    }
+    .poster_sale-text {
+        left: 23px;
+        font-size: 120%;
+    }
+    .content {
+        clear: both;
+    }
+    .bottom__block {
+        /* height: none; */
+        display: flex;
+        flex-direction: column-reverse;
+        /* clear: both; */
+    }
+    .footer__links,
+    .basket__informer {
+        width: 100%;
+    }
 }
 
-@media only screen and (max-width: 667px) {}
+@media only screen and (max-width: 667px) {
+    .section__logo {
+        height: 80px;
+    }
+    .block__logo,
+    .phone__service {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .logo__name {
+        margin-top: -10px;
+    }
+    .logo__text_wrapper {
+        float: none;
+    }
+    .logo__text {
+        font-size: 110%;
+        margin-top: 5px;
+    }
+    /* ****************************** */
+    .main__poster-sale {
+        bottom: 57px;
+    }
+    .copyright,
+    .development {
+        display: block;
+        float: none;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+    }
+}
 
 @media only screen and (max-width: 414px) {}
 

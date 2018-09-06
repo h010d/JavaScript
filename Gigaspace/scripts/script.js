@@ -14,6 +14,7 @@ function Giga(sSelector) {
     g.menuAccordionItems = g.menuAccordion.children('li');
 
     g.menuHamburger = g.findObj('.menuToggle');
+    g.menuHamburgerStatus = false;
     g.menuLink = g.findObj('.menu');
     g.showHideSubMenu = function(event) {
         event.preventDefault();
@@ -26,8 +27,8 @@ function Giga(sSelector) {
     }
     g.showHideHamburger = function(event) {
         event.preventDefault();
-        console.log('g.menuHamburger :', g.menuHamburger);
         $(g.menuLink).stop().slideToggle(300);
+        $(g.menuHamburger).toggleClass('menuToggle-active');
     }
 
     $(window).resize(function() {
@@ -39,15 +40,12 @@ function Giga(sSelector) {
             g.menuLink.css(
                 'display', 'none'
             );
+            if ((g.menuHamburger).hasClass('menuToggle-active')) {
+                $(g.menuHamburger).removeClass('menuToggle-active');
+            }
         }
+
     });
-
-    // 	, function() {
-    // 		g.menuLink.css(
-    // 				'display : block'
-    // 		);
-    // }
-
 
     //** *****************    events   *****************    */
     g.menuAccordionItems.click(g.showHideSubMenu);
