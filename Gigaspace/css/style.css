@@ -164,6 +164,12 @@ button::-moz-focus-inner {
 
 /*=====  End of Section comment block  ======*/
 
+.navbar__button-basket,
+.navbar__button-login,
+.navbar__button-search {
+    display: none;
+}
+
 
 /*=============================================
 =            Section comment block            =
@@ -434,7 +440,7 @@ button::-moz-focus-inner {
     background-color: #333333;
     background-image: linear-gradient(to top, #f7841d 0%, #f7841d 24%, #f8d549 76%, #f8d549 100%);
     position: absolute;
-    background-image: url(../images/search.svg) no-repeat cover;
+    /* background-image: url(../images/search.svg) no-repeat cover; */
     font-family: 'Material-Design-Iconic-Font';
     font-size: 22px;
     text-align: center;
@@ -833,7 +839,6 @@ button::-moz-focus-inner {
 }
 
 .card__item {
-    outline: 1px solid red;
     width: 49%;
     height: 100%;
     margin-bottom: 14px;
@@ -897,7 +902,6 @@ button::-moz-focus-inner {
 }
 
 .card__info-cost {
-    display: none;
     float: right;
     margin: 5px 14px;
     color: #fff;
@@ -935,10 +939,10 @@ button::-moz-focus-inner {
 =============================================*/
 
 .bottom__block {
-    /* height: 171px; */
     width: 100%;
+    padding: 9px 0;
+    display: inline-block;
     border-bottom: 3px solid rgba(204, 204, 204, 0.685);
-    padding-top: 10px;
 }
 
 
@@ -947,7 +951,6 @@ button::-moz-focus-inner {
 .footer__links {
     float: left;
     width: 50%;
-    height: 100%;
 }
 
 .links__quicklinks {
@@ -996,7 +999,8 @@ button::-moz-focus-inner {
 .basket__informer {
     float: left;
     width: 50%;
-    padding: 14px;
+    padding: 11px 14px;
+    margin-top: 4px;
     box-sizing: border-box;
     border: 1px solid #cccccc;
     background-color: #e0e0e0;
@@ -1042,7 +1046,7 @@ button::-moz-focus-inner {
 =============================================*/
 
 .copy-development {
-    margin-top: 27px;
+    margin-top: 22px;
 }
 
 .copyright {
@@ -1064,7 +1068,7 @@ button::-moz-focus-inner {
 }
 
 footer {
-    /* height: 260px; */
+    height: 260px;
 }
 
 
@@ -1094,7 +1098,7 @@ footer {
         height: 105px;
     }
     .form__login {
-        outline: 2px solid blue;
+        /* outline: 2px solid blue; */
         width: 50%;
         height: 80px;
     }
@@ -1359,10 +1363,8 @@ footer {
         clear: both;
     }
     .bottom__block {
-        /* height: none; */
         display: flex;
         flex-direction: column-reverse;
-        /* clear: both; */
     }
     .footer__links,
     .basket__informer {
@@ -1391,10 +1393,96 @@ footer {
         font-size: 110%;
         margin-top: 5px;
     }
+    /* ************ SECTION MENU  *********************** */
+    .section__menu {}
+    .navbar__button-basket,
+    .navbar__button-search,
+    .navbar__button-login {
+        /* outline: 1px dotted white; */
+        /* float: right; */
+        display: block;
+        position: relative;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(0, 0, 0, 0.253);
+        margin-top: -40px;
+        cursor: pointer;
+        font-family: 'Material-Design-Iconic-Font';
+        font-size: 21px;
+    }
+    .zmdi {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.5);
+    }
+    .navbar__button-basket {
+        float: left;
+        margin-left: 30%;
+    }
+    .navbar__button-search {
+        float: left;
+        margin-left: 60%;
+    }
+    .navbar__button-login {
+        float: right;
+        /* margin-left: 75%;*/
+    }
+    /* ************ SECTION MAIN BLOCK ****************** */
+    .main_top {
+        height: 0;
+    }
+    .form__login {
+        display: none;
+    }
+    .basket__block {
+        display: none;
+    }
+    .search__block {
+        display: none;
+    }
     /* ****************************** */
     .main__poster-sale {
+        right: 88%;
         bottom: 57px;
     }
+    .poster_sale-text {
+        font-size: calc(0.82em + 1vmin);
+        left: 14%;
+    }
+    .main__poster_box-info {
+        margin-right: 7px;
+        margin-top: 115px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+    .box-info {
+        margin-top: 8px;
+        width: 100%;
+        height: 45px;
+        text-align: center;
+    }
+    .poster_btn {
+        width: 90%;
+        bottom: 5%;
+        height: 35px;
+    }
+    .info__name-footer {
+        margin: 3%;
+        width: 65%;
+    }
+    .card__info-cost {
+        margin: 0;
+        margin-right: 3%;
+    }
+    .card_btn {
+        width: 90%;
+        height: 35px;
+    }
+    /* ****************************** */
     .copyright,
     .development {
         display: block;
