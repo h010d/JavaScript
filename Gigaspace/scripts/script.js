@@ -36,35 +36,41 @@ function Giga(sSelector) {
         $(g.menuLink).stop().slideToggle(300);
         $(g.menuHamburger).toggleClass('menuToggle-active');
     }
-
+    g.checkHamburger = function() {
+        if ((g.menuHamburger).hasClass('menuToggle-active')) {
+            $(g.menuHamburger).removeClass('menuToggle-active');
+            g.menuLink.css(
+                'display', 'none'
+            );
+        }
+    }
     $(window).resize(function() {
         if ($(window).width() >= 710) {
             g.menuLink.css(
                 'display', 'block'
             );
         } else {
-            g.menuLink.css(
-                'display', 'none'
-            );
-            if ((g.menuHamburger).hasClass('menuToggle-active')) {
-                $(g.menuHamburger).removeClass('menuToggle-active');
-            }
+
+            g.checkHamburger();
         }
 
     });
     g.showBasketModal = function() {
         $('.modal__background').css({ display: 'block' });
         $('.basket__block').css({ display: 'block' });
+        g.checkHamburger();
         // console.log('g.buttonBasket :', g.buttonBasket);
     }
     g.showSearchModal = function() {
         $('.modal__background').css({ display: 'block' });
         $('.search__block').css({ display: 'block' });
+        g.checkHamburger();
         // console.log('g.buttonSearch :', g.buttonSearch);
     }
     g.showLoginModal = function() {
         $('.modal__background').css({ display: 'block' });
         $('.form__login').css({ display: 'block' });
+        g.checkHamburger();
         // console.log('g.buttonLogin :', g.buttonLogin);
     }
     g.closeAllModals = function() {
@@ -72,6 +78,7 @@ function Giga(sSelector) {
         $('.basket__block').css({ display: 'none' });
         $('.form__login').css({ display: 'none' });
         $('.search__block').css({ display: 'none' });
+        g.checkHamburger();
         // console.log(' g.buttonClose :', g.buttonClose);
     }
     g.closeModalField = function(event) {
