@@ -16,6 +16,12 @@ function Giga(sSelector) {
     g.menuHamburger = g.findObj('.menuToggle');
     g.menuHamburgerStatus = false;
     g.menuLink = g.findObj('.menu');
+    g.buttonBasket = g.findObj('.navbar__button-basket');
+    g.buttonSearch = g.findObj('.navbar__button-search');
+    g.buttonLogin = g.findObj('.navbar__button-login');
+    g.modalField = g.findObj('.modal__background');
+    g.buttonClose = g.findObj('.close');
+
     g.showHideSubMenu = function(event) {
         event.preventDefault();
         // console.log('event.target :', event.target);
@@ -46,9 +52,44 @@ function Giga(sSelector) {
         }
 
     });
-
-    //** *****************    events   *****************    */
+    g.showBasketModal = function() {
+        $('.modal__background').css({ display: 'block' });
+        $('.basket__block').css({ display: 'block' });
+        // console.log('g.buttonBasket :', g.buttonBasket);
+    }
+    g.showSearchModal = function() {
+        $('.modal__background').css({ display: 'block' });
+        $('.search__block').css({ display: 'block' });
+        // console.log('g.buttonSearch :', g.buttonSearch);
+    }
+    g.showLoginModal = function() {
+        $('.modal__background').css({ display: 'block' });
+        $('.form__login').css({ display: 'block' });
+        // console.log('g.buttonLogin :', g.buttonLogin);
+    }
+    g.closeAllModals = function() {
+        $('.modal__background').css({ display: 'none' });
+        $('.basket__block').css({ display: 'none' });
+        $('.form__login').css({ display: 'none' });
+        $('.search__block').css({ display: 'none' });
+        // console.log(' g.buttonClose :', g.buttonClose);
+    }
+    g.closeModalField = function(event) {
+            console.log(' g.modalField:', g.modalField);
+            console.log('this:', $(this).attr('class'));
+            console.log('event.currentTarget:', $(event.currentTarget).attr('class'));
+            console.log('event.target:', $(event.target).attr('class'));
+            if ($(event.target).hasClass('modal__background')) {
+                g.closeAllModals();
+            }
+        }
+        //** *****************    events   *****************    */
     g.menuAccordionItems.click(g.showHideSubMenu);
     g.menuHamburger.click(g.showHideHamburger);
+    g.buttonBasket.click(g.showBasketModal);
+    g.buttonSearch.click(g.showSearchModal);
+    g.buttonLogin.click(g.showLoginModal);
+    g.buttonClose.click(g.closeAllModals);
+    g.modalField.click(g.closeModalField);
 }
 Giga.prototype = new Component();

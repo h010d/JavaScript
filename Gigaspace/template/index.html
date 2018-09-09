@@ -14,7 +14,6 @@
 
 <body>
     <div id="init1">
-
         <div class="section__logo">
             <div class="wrapper">
                 <div class="block__logo">
@@ -23,7 +22,6 @@
                     <div class="logo__text_wrapper">
                         <div class="logo__name">
                             <a href="#" class="logo__link"><span class="logo__name_start">Giga</span><span class="logo__name_end">Space</span></a>
-
                         </div>
                         <div class="logo__text">
                             <p>We provide the power for your computer system</p>
@@ -34,7 +32,6 @@
                     <a href="tel:+55586512476 " class="logo__link">Customer service: 555 865 1247 6</a>
                 </div>
             </div>
-
         </div>
         <div class="line__over_menu"></div>
 
@@ -42,7 +39,6 @@
             <div class="wrapper">
                 <div class="menuToggle">
                     <span class="menuToggle__line"></span>
-
                 </div>
                 <div class="navbar__button-basket"> <i class="zmdi zmdi-shopping-basket  zmdi-hc-2x"></i> </div>
                 <div class="navbar__button-search"><i class="zmdi zmdi-search zmdi-hc-2x"></i></div>
@@ -84,39 +80,43 @@
                         </a>
                     </li>
                 </ul>
-
-
             </div>
-
         </nav>
         <div class="line__under_menu"></div>
         <div class="wrapper">
             <main>
                 <section class="main_top">
-                    <div class="form__login">
-                        <form class="login" action="/" method="post">
-                            <div class="over__login_block">
-                                <p class="over__login_text">If you wish to save your shopping card, you will need to log in:</p>
-                            </div>
-                            <div class="position__form">
-                                <div class="img__login">
-                                    <img class="img__login" src="../images/smile2.png" alt="smile" srcset="">
+                    <div class="modal__background">
+
+                        <div class="form__login">
+                            <span class="close close__position-login">&times;</span>
+                            <form class="login" action="/" method="post">
+                                <div class="over__login_block">
+                                    <p class="over__login_text">If you wish to save your shopping card, you will need to log in:</p>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="name" type="text" placeholder="Username" autocomplete="username" required>
+                                <div class="position__form">
+                                    <div class="img__login">
+                                        <!-- //TODO: изменить картинку на фон -->
+                                        <img class="img__login" src="../images/smile2.png" alt="smile" srcset="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="name" type="text" placeholder="Username" autocomplete="username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="pass" type="password" placeholder="Password" autocomplete="current-password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button id="sendLogin" class="btn btn-login" type="submit">Log in</button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="pass" type="password" placeholder="Password" autocomplete="current-password" required>
-                                </div>
-                                <div class="form-group">
-                                    <button id="sendLogin" class="btn btn-login" type="submit">Log in</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                     <div class="basket__block">
+                        <span class="close close__position-basket">&times;</span>
                         <div class="position__basket">
                             <div class="img__basket">
+                                <!-- //TODO: изменить картинку на фон -->
                                 <img src="../images/basket.png" alt="basket" srcset="">
                             </div>
                             <div class="basket__text">
@@ -126,11 +126,8 @@
                                     <span class="basket_save">Save Basket</span>-
                                     <span class="basket_item_text">Last item added:</span>
                                     <span class="basket_item">1x Asus GTX456 GFX Card</span>
-
                                 </p>
-
                             </div>
-
                         </div>
                     </div>
                 </section>
@@ -141,15 +138,13 @@
 				-->
                 <section class="content">
                     <!-- Left block -->
-
                     <div class="search__block">
+                        <span class="close close__position-search">&times;</span>
                         <div class="search__header">
                             <div class="search__header-element zmdi-search">
-
                             </div>
                         </div>
                         <div class="search__main">
-
                             <!--
 				////////////////////////////////////////
 				////       Начало - select Brand    ////
@@ -288,7 +283,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <!--
 ////////////////////////////////////////
 ////          end accordion         ////
@@ -318,8 +312,6 @@
                                     <button class="btn_view  add__tocart" type="submit">Add to cart</button>
                                 </div>
                             </div>
-
-
                         </div>
                         <!-- Cards -->
                         <div class="goods">
@@ -453,7 +445,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="copy-development clearfix">
                     <span class="copyright">Copyright 2010 GigaSpace Solutions. All rights reserved.</span>
                     <span class="development">Design & Development by gerbengeeraerts.</span>
