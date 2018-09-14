@@ -39,7 +39,6 @@
 
 .temp {
     width: 100%;
-    /* outline: 1px dotted white; */
 }
 
 * {
@@ -238,9 +237,7 @@ button::-moz-focus-inner {
     margin-left: 30px;
 }
 
-.menu__title {
-    /* text-align: center; */
-}
+.menu__title {}
 
 .line__under_menu {
     width: 100%;
@@ -266,7 +263,6 @@ button::-moz-focus-inner {
 .form__login {
     overflow: hidden;
     float: left;
-    /* display: inline-block; */
     width: 55%;
     padding-top: 20px;
     height: 66px;
@@ -331,7 +327,6 @@ button::-moz-focus-inner {
     float: right;
     width: 44.5%;
     overflow: hidden;
-    /* display: inline-block; */
     margin-top: 35px;
     height: 45px;
 }
@@ -392,9 +387,8 @@ button::-moz-focus-inner {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     background-color: #FFFFFF;
     padding: 11px 10px 0 10px;
-    /* display: inline-block; */
-    /* position: relative; */
-    overflow: hidden;
+    float: right;
+    width: 98%;
 }
 
 
@@ -406,8 +400,7 @@ button::-moz-focus-inner {
 =============================================*/
 
 .search__block {
-    /* height: 180px; */
-    display: inline-block;
+    overflow: hidden;
     float: left;
     width: 33%;
     margin-bottom: 15px;
@@ -445,7 +438,6 @@ button::-moz-focus-inner {
     background-color: #333333;
     background-image: linear-gradient(to top, #f7841d 0%, #f7841d 24%, #f8d549 76%, #f8d549 100%);
     position: absolute;
-    /* background-image: url(../images/search.svg) no-repeat cover; */
     font-family: 'Material-Design-Iconic-Font';
     font-size: 22px;
     text-align: center;
@@ -761,7 +753,6 @@ button::-moz-focus-inner {
 }
 
 .poster_sale-text {
-    position: absolute;
     left: 25px;
     width: 80%;
     text-align: start;
@@ -984,7 +975,6 @@ button::-moz-focus-inner {
 
 .footer__item {
     margin-left: 15px;
-    /* margin-top: 1px; */
 }
 
 .footer__item a {
@@ -1192,7 +1182,11 @@ footer {
     }
     .basket__block {
         padding-top: 0px;
-        margin: 10px 0;
+        margin-top: 0;
+    }
+    .content {
+        float: right;
+        margin-top: 20px;
     }
     .search__block {
         float: right;
@@ -1653,9 +1647,6 @@ footer {
 /* Смартфоны */
 
 @media only screen and (max-width: 480px) {}
-
-
-/* //TODO: исправить шрифт в постере на кнопке и .box-info до 360 */
 
 @media only screen and (max-width: 360px) {
     .logo__text {
