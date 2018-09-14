@@ -107,7 +107,6 @@ button::-moz-focus-inner {
     width: 320px;
     height: 53px;
     margin: 30px 0;
-    /* outline: 1px solid #c0c0c0; */
     float: left;
 }
 
@@ -115,7 +114,6 @@ button::-moz-focus-inner {
     float: left;
     width: 54px;
     height: 53px;
-    /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.75); */
     background: url(../images/logo.png) no-repeat center;
 }
 
@@ -195,10 +193,11 @@ button::-moz-focus-inner {
 }
 
 .section__menu {
-    /* outline: 1px solid rgb(50, 60, 205); */
     height: 60px;
     background: linear-gradient(to top, #f7941d 0%, #f7941d 24%, #f8bb49 76%, #f8bb49 100%);
 }
+
+.section__menu::before {}
 
 .menu {
     padding: 20px 0;
@@ -243,9 +242,6 @@ button::-moz-focus-inner {
     /* text-align: center; */
 }
 
-
-/* // TODO: переделать на before и ::after */
-
 .line__under_menu {
     width: 100%;
     height: 1px;
@@ -268,7 +264,9 @@ button::-moz-focus-inner {
 /*----------  form login  ----------*/
 
 .form__login {
-    display: inline-block;
+    overflow: hidden;
+    float: left;
+    /* display: inline-block; */
     width: 55%;
     padding-top: 20px;
     height: 66px;
@@ -330,10 +328,12 @@ button::-moz-focus-inner {
 /*----------  basket  block  ----------*/
 
 .basket__block {
-    width: 44%;
-    display: inline-block;
-    padding-top: 20px;
-    height: 66px;
+    float: right;
+    width: 44.5%;
+    overflow: hidden;
+    /* display: inline-block; */
+    margin-top: 35px;
+    height: 45px;
 }
 
 .position__basket {
@@ -392,8 +392,9 @@ button::-moz-focus-inner {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     background-color: #FFFFFF;
     padding: 11px 10px 0 10px;
-    display: inline-block;
+    /* display: inline-block; */
     /* position: relative; */
+    overflow: hidden;
 }
 
 
@@ -746,7 +747,6 @@ button::-moz-focus-inner {
 .main__poster-sale {
     position: absolute;
     display: flex;
-    /* float: right; */
     right: 68%;
     bottom: 37px;
     background: url(../images/sale.png) no-repeat center/cover;
@@ -836,6 +836,9 @@ button::-moz-focus-inner {
 
 .goods {
     margin-top: 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -962,7 +965,6 @@ button::-moz-focus-inner {
     float: left;
     border-right: 1px solid #D0D0D0;
     height: 95%;
-    /* outline: 1px solid yellowgreen; */
 }
 
 .links__hot-products {
@@ -1136,8 +1138,8 @@ footer {
         font-size: 16px;
     }
     .basket__block {
-        width: 45%;
-        padding-top: 34px;
+        width: 44%;
+        /* padding-top: 34px; */
         height: 63px;
         vertical-align: top;
     }
@@ -1179,7 +1181,6 @@ footer {
 /* Планшеты */
 
 @media only screen and (max-width: 768px) {
-    /* //TODO: текст телефона исправить */
     .basket__block,
     .form__login {
         width: 51%;
@@ -1207,7 +1208,6 @@ footer {
         width: 100%;
         margin-top: 0;
     }
-    /* //TODO: текст постера сделать 90% */
 }
 
 @media only screen and (max-width: 736px) {
@@ -1236,9 +1236,7 @@ footer {
         height: 50px;
     }
     .block__logo {
-        /* height: 100%; */
         margin: 0;
-        /* outline: 1px solid #c0c0c0; */
     }
     .logo__image {
         display: none;
@@ -1408,8 +1406,6 @@ footer {
     .navbar__button-basket,
     .navbar__button-search,
     .navbar__button-login {
-        /* outline: 1px dotted white; */
-        /* float: right; */
         display: block;
         position: relative;
         height: 40px;
@@ -1446,7 +1442,6 @@ footer {
         display: none;
         position: fixed;
         margin-top: -122px;
-        /* padding-top: 100px; */
         width: 100%;
         /* Full width */
         height: 100%;
@@ -1458,7 +1453,6 @@ footer {
         color: #aaaaaa;
         float: right;
         font-size: 28px;
-        /* font-weight: bold; */
         display: block;
     }
     .close:hover,
@@ -1563,6 +1557,18 @@ footer {
     }
     /* ****************END SEARCH FORM ******************** */
     /* ****************************** */
+    .main__poster-header_gradient {
+        margin: 21px auto 5px auto;
+        width: 95%;
+        display: block;
+    }
+    .main__poster-header {
+        width: 100%;
+        text-align: center;
+        /* display: inline-block; */
+        /* margin: 0 auto; */
+        /* position: relative; */
+    }
     .main__poster-sale {
         right: 88%;
         bottom: 57px;
@@ -1625,7 +1631,19 @@ footer {
     }
 }
 
-@media only screen and (max-width: 414px) {}
+@media only screen and (max-width: 414px) {
+    .poster_sale-text {
+        font-size: calc(0.8em + 1vmin);
+    }
+    .poster_btn {
+        width: 110%;
+    }
+    .view__product,
+    .add__tocart {
+        width: 49%;
+        font-size: calc(0.39em + 1vmin);
+    }
+}
 
 @media only screen and (max-width: 412px) {}
 
@@ -1635,3 +1653,62 @@ footer {
 /* Смартфоны */
 
 @media only screen and (max-width: 480px) {}
+
+
+/* //TODO: исправить шрифт в постере на кнопке и .box-info до 360 */
+
+@media only screen and (max-width: 360px) {
+    .logo__text {
+        font-size: 95%;
+        margin-top: 5px;
+    }
+    .form__login,
+    .basket__block,
+    .search__block {
+        width: 90%;
+    }
+    .poster__sale {
+        width: 55%;
+    }
+    .main__poster-sale {
+        height: 27vw;
+        width: 27vw;
+    }
+    .poster_sale-text {
+        font-size: calc(0.8em + 1vmin);
+    }
+    .main__poster_box-info {
+        margin-top: 105px;
+        height: 70px;
+    }
+    .box-info {
+        font-size: calc(0.6em + 1vmin);
+        margin-top: 3px;
+    }
+    .card__item {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 14px;
+        clear: both;
+    }
+    .card_btn {
+        width: 75%;
+    }
+    .view__product,
+    .add__tocart {
+        font-size: calc(0.5em + 1vmin);
+    }
+    .links__hot-products {
+        max-width: 100%;
+        float: none;
+        margin-left: 0;
+        text-align: center;
+    }
+    .links__quicklinks {
+        width: 100%;
+        float: none;
+        border-right: none;
+        height: 45%;
+        text-align: center;
+    }
+}

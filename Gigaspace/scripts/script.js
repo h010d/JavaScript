@@ -9,10 +9,8 @@ function Giga(sSelector) {
     var ScreenWidth = screen.width;
     var ScreenHeight = screen.height;
     // alert(ScreenWidth + 'x' + ScreenHeight);
-
     g.menuAccordion = g.findObj('#menu1');
     g.menuAccordionItems = g.menuAccordion.children('li');
-
     g.menuHamburger = g.findObj('.menuToggle');
     g.menuHamburgerStatus = false;
     g.menuLink = g.findObj('.menu');
@@ -21,7 +19,6 @@ function Giga(sSelector) {
     g.buttonLogin = g.findObj('.navbar__button-login');
     g.modalField = g.findObj('.modal__background');
     g.buttonClose = g.findObj('.close');
-
     g.showHideSubMenu = function(event) {
         event.preventDefault();
         // console.log('event.target :', event.target);
@@ -39,10 +36,10 @@ function Giga(sSelector) {
     g.checkHamburger = function() {
         if ((g.menuHamburger).hasClass('menuToggle-active')) {
             $(g.menuHamburger).removeClass('menuToggle-active');
-            g.menuLink.css(
-                'display', 'none'
-            );
         }
+        g.menuLink.css(
+            'display', 'none'
+        );
     }
     $(window).resize(function() {
         if ($(window).width() >= 710) {
@@ -50,10 +47,8 @@ function Giga(sSelector) {
                 'display', 'block'
             );
         } else {
-
             g.checkHamburger();
         }
-
     });
     g.showBasketModal = function() {
         $('.modal__background').css({ display: 'block' });
@@ -82,10 +77,10 @@ function Giga(sSelector) {
         // console.log(' g.buttonClose :', g.buttonClose);
     }
     g.closeModalField = function(event) {
-            console.log(' g.modalField:', g.modalField);
-            console.log('this:', $(this).attr('class'));
-            console.log('event.currentTarget:', $(event.currentTarget).attr('class'));
-            console.log('event.target:', $(event.target).attr('class'));
+            // console.log(' g.modalField:', g.modalField);
+            // console.log('this:', $(this).attr('class'));
+            // console.log('event.currentTarget:', $(event.currentTarget).attr('class'));
+            // console.log('event.target:', $(event.target).attr('class'));
             if ($(event.target).hasClass('modal__background')) {
                 g.closeAllModals();
             }
