@@ -187,7 +187,6 @@ button::-moz-focus-inner {
     height: 40px;
     width: 40px;
     cursor: pointer;
-    display: block;
     display: none;
 }
 
@@ -700,7 +699,6 @@ button::-moz-focus-inner {
 }
 
 .poster__sale {
-    /* float: right; */
     position: absolute;
     width: 50%;
     height: 70%;
@@ -1094,7 +1092,6 @@ footer {
         height: 105px;
     }
     .form__login {
-        /* outline: 2px solid blue; */
         width: 50%;
         height: 80px;
     }
@@ -1181,7 +1178,7 @@ footer {
         margin: 0 auto;
     }
     .basket__block {
-        padding-top: 0px;
+        padding-top: 0;
         margin-top: 0;
     }
     .content {
@@ -1190,9 +1187,8 @@ footer {
     }
     .search__block {
         float: right;
-        /* height: 180px; */
         margin-top: -193px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         width: 48%;
     }
     .section__accordion {
@@ -1269,7 +1265,7 @@ footer {
     .menuToggle__line::after {
         content: "";
         width: 100%;
-        margin-left: 0px;
+        margin-left: 0;
         transition: .2s;
         -webkit-transition: .2s;
         -moz-transition: .2s;
@@ -1500,9 +1496,7 @@ footer {
         display: none;
     }
     .position__basket {
-        /* display: block; */
         width: 95%;
-        margin-top: 30px;
         margin: 30px auto 0;
     }
     .basket__text_top {
@@ -1559,9 +1553,6 @@ footer {
     .main__poster-header {
         width: 100%;
         text-align: center;
-        /* display: inline-block; */
-        /* margin: 0 auto; */
-        /* position: relative; */
     }
     .main__poster-sale {
         right: 88%;
